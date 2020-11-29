@@ -8,7 +8,7 @@ const config = {
   jsx: 'react',
   plugins: [reactPlugin],
   optimizeDeps: {
-    exclude: ['prop-types'],
+    exclude: ['prop-types']
   }
 }
 
