@@ -7,3 +7,7 @@ export function addMessage(body, level = false) {
 export function addSuccessMessage(body) {
   return addMessage(body, 'is-primary')
 }
+
+export function deleteMessage(payload) {
+  return { type: 'DELETE_MESSAGE', payload }
+}

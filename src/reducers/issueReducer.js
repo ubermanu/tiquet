@@ -1,8 +1,5 @@
 const initialState = []
-
-function exclude(issue) {
-  return ({ id }) => id !== issue.id
-}
+import { exclude } from './filters'
 
 export default function issueReducer(state = initialState, action) {
   const { type, payload } = action
