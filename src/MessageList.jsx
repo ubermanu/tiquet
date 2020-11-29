@@ -5,11 +5,11 @@ import Message from './Message'
 export default function MessageList() {
   const messages = useSelector(state => state.messages)
 
-  return messages.length ? (
-    messages.map(message => (
-      <Message key={message.id}>{message.body}</Message>
-    ))
-  ) : (
-    <></>
+  return (
+    <div className="messages">
+      {messages.map(message => (
+        <Message key={message.id} className={message.level}>{message.body}</Message>
+      ))}
+    </div>
   )
 }

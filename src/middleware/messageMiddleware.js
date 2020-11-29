@@ -1,4 +1,4 @@
-import { addMessage } from '../actions/messageActions'
+import { addSuccessMessage } from '../actions/messageActions'
 
 const messageMiddleware = storeAPI => next => action => {
   const { type } = action
@@ -6,11 +6,15 @@ const messageMiddleware = storeAPI => next => action => {
 
   switch (type) {
     case 'CREATE_ISSUE': {
-      storeAPI.dispatch(addMessage('Issue has been created'))
+      storeAPI.dispatch(addSuccessMessage('Issue has been created'))
       break
     }
     case 'UPDATE_ISSUE': {
-      storeAPI.dispatch(addMessage('Issue has been updated'))
+      storeAPI.dispatch(addSuccessMessage('Issue has been updated'))
+      break
+    }
+    case 'DELETE_ISSUE': {
+      storeAPI.dispatch(addSuccessMessage('Issue has been deleted'))
       break
     }
   }
