@@ -16,8 +16,8 @@ import IssueCreateView from './IssueCreateView'
 
 function App() {
   return (
-    <Router>
-      <StoreContextProvider>
+    <StoreContextProvider>
+      <Router>
         <main>
           <NavigationBar />
           <section className="section">
@@ -44,8 +44,8 @@ function App() {
             </div>
           </footer>
         </main>
-      </StoreContextProvider>
-    </Router>
+      </Router>
+    </StoreContextProvider>
   )
 }
 
