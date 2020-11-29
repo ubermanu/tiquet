@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { connect } from 'react-redux'
+import { createIssue } from './actions/issueActions'
 
 function IssueCreateView({ createIssue }) {
   const initialFormData = {
@@ -52,7 +53,7 @@ function IssueCreateView({ createIssue }) {
 }
 
 const mapDispatchToProps = {
-  createIssue: payload => ({ type: 'ADD_ISSUE', payload })
+  createIssue
 }
 
 export default connect(

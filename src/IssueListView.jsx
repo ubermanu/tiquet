@@ -5,7 +5,7 @@ function IssueListView({ issues }) {
   return (
     <div className="container">
       {issues.map(issue => (
-        <div key={issue.uid} className="card">
+        <div key={issue.id} className="card">
           <div className="card-content">
             <p className="title is-6">{issue.title}</p>
             <div className="content">
