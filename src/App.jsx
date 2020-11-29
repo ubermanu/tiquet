@@ -10,6 +10,7 @@ import {
 
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
+import IssueView from './IssueView'
 
 function App() {
   return (
@@ -18,6 +19,9 @@ function App() {
         <NavigationBar />
         <section className="section">
           <Switch>
+            <Route path="/issue/:issueId">
+              <IssueView />
+            </Route>
             <Route path="/issues">
               <IssueListView />
             </Route>
