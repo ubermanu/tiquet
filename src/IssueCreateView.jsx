@@ -1,23 +1,34 @@
 import React from 'react'
 
-function IssueView() {
+function IssueCreateView() {
   return (
     <div className="container">
-      <article className="content">
-        <h2 className="content-title">
-          It was going to rain
-        </h2>
-        <p>
-          The weather forecast didn't say that, but the steel plate in his hip did. He had learned over the years to
-          trust his hip over the weatherman. It was going to rain, so he better get outside and prepare. Sleeping in his
-          car was never the plan but sometimes things don't work out as planned. This had been his life for the last
-          three months and he was just beginning to get used to it. He didn't actually enjoy it, but he had accepted it
-          and come to terms with it. Or at least he thought he had. All that changed when he put the key into the
-          ignition, turned it and the engine didn't make a sound.
-        </p>
-      </article>
+      <form>
+        <div className="field">
+          <label className="label">Title</label>
+          <div className="control">
+            <input className="input" type="text" />
+          </div>
+        </div>
+
+        <div className="field">
+          <label className="label">Description</label>
+          <div className="control">
+            <textarea className="textarea" />
+          </div>
+        </div>
+
+        <div className="field is-grouped">
+          <div className="control">
+            <button className="button is-link">Submit</button>
+          </div>
+          <div className="control">
+            <button className="button is-link is-light">Cancel</button>
+          </div>
+        </div>
+      </form>
     </div>
   )
 }
 
-export default IssueView
+export default IssueCreateView

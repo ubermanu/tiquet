@@ -11,6 +11,7 @@ import {
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
 import IssueView from './IssueView'
+import IssueCreateView from './IssueCreateView'
 
 function App() {
   return (
@@ -21,6 +22,9 @@ function App() {
           <Switch>
             <Route path="/issue/:issueId">
               <IssueView />
+            </Route>
+            <Route path="/issues/new">
+              <IssueCreateView />
             </Route>
             <Route path="/issues">
               <IssueListView />
