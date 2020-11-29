@@ -3,6 +3,7 @@ import 'halfmoon/css/halfmoon-variables.min.css'
 import './App.css'
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
+import ProjectListView from './ProjectListView'
 
 function App() {
   return (
@@ -15,7 +16,7 @@ function App() {
         <NavigationBar />
         <div className="sidebar" />
         <div className="content-wrapper">
-          <IssueListView />
+          <ProjectListView />
         </div>
       </div>
     </main>
