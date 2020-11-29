@@ -15,14 +15,14 @@ import IssueDetailView from './IssueDetailView'
 import IssueCreateView from './IssueCreateView'
 import NotFoundView from './NotFoundView'
 import IssueEditView from './IssueEditView'
-import MessageList from './MessageList'
+import Toast from './Toast'
 
 export default function App() {
   return (
     <Router>
       <main>
         <NavigationBar />
-        <MessageList />
+        <Toast />
         <section className="section">
           <Switch>
             <Route exact path="/issue/:id">

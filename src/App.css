@@ -14,3 +14,11 @@ main {
 .is-strike {
     text-decoration: line-through;
 }
+
+.toast {
+    position: fixed;
+    width: 20rem;
+    z-index: 99;
+    left: 2rem;
+    bottom: 2rem;
+}
