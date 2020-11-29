@@ -4,6 +4,6 @@ export function createIssue(data) {
   return { type: 'ADD_ISSUE', payload: { id: uuid(), complete: false, ...data } }
 }
 
-export function toggleIssue(issue, complete) {
+export function toggleIssue(issue) {
   return { type: 'UPDATE_ISSUE', payload: { ...issue, complete: !issue.complete } }
 }
