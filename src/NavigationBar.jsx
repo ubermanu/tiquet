@@ -37,14 +37,16 @@ export default function NavigationBar() {
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
-            <div className="field">
-              <div className="control has-icons-left has-icons-right">
-                <input className="input" type="email" placeholder="Find an issue..." />
-                <span className="icon is-small is-left">
-                  <i className="fas fa-search" />
-                </span>
+            <form action={`/search`}>
+              <div className="field">
+                <div className="control has-icons-left has-icons-right">
+                  <input className="input" type="text" name="q" placeholder="Find an issue..." />
+                  <span className="icon is-small is-left">
+                    <i className="fas fa-search" />
+                  </span>
+                </div>
               </div>
-            </div>
+            </form>
           </div>
         </div>
       </div>

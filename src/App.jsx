@@ -16,6 +16,7 @@ import IssueCreateView from './IssueCreateView'
 import NotFoundView from './NotFoundView'
 import IssueEditView from './IssueEditView'
 import Toast from './Toast'
+import SearchResultView from './SearchResultView'
 
 export default function App() {
   return (
@@ -37,10 +38,13 @@ export default function App() {
             <Route exact path="/issues">
               <IssueListView />
             </Route>
+            <Route exact path="/search">
+              <SearchResultView />
+            </Route>
             <Route exact path="/">
               <Redirect to="/issues" />
             </Route>
-            <Route>
+            <Route path="*">
               <NotFoundView />
             </Route>
           </Switch>
