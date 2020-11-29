@@ -34,13 +34,6 @@ function NavigationBar() {
             &nbsp;
             <span>Issues</span>
           </Link>
-          <Link to="/settings" className="navbar-item">
-            <span className="icon">
-              <i className="fa fa-cog" />
-            </span>
-            &nbsp;
-            <span>Settings</span>
-          </Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
