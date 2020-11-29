@@ -9,7 +9,7 @@ function NavigationBar() {
     <nav className="navbar" role="navigation" aria-label="main navigation">
       <div className="navbar-brand">
         <Link to="/" className="navbar-item">
-          <span>🦟</span>
+          <span className="is-size-4">🦟</span>
         </Link>
         <a role="button" aria-label="menu" aria-expanded="false" onClick={() => setOpen(!open)}
            className={classNames('navbar-burger', 'burger', open && 'is-active')}>
@@ -20,9 +20,27 @@ function NavigationBar() {
       </div>
       <div className={classNames('navbar-menu', open && 'is-active')}>
         <div className="navbar-start">
-          <Link to="/" className="navbar-item">Home</Link>
-          <Link to="/issues" className="navbar-item">Issues</Link>
-          <Link to="/settings" className="navbar-item">Settings</Link>
+          <Link to="/issues/new" className="navbar-item">
+            <span className="icon">
+              <i className="fa fa-plus"/>
+            </span>
+            &nbsp;
+            <span>New issue</span>
+          </Link>
+          <Link to="/issues" className="navbar-item">
+            <span className="icon">
+              <i className="fa fa-list"/>
+            </span>
+            &nbsp;
+            <span>Issues</span>
+          </Link>
+          <Link to="/settings" className="navbar-item">
+            <span className="icon">
+              <i className="fa fa-cog"/>
+            </span>
+            &nbsp;
+            <span>Settings</span>
+          </Link>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
