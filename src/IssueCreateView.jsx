@@ -1,14 +1,15 @@
 import React, { useState } from 'react'
-import { connect } from 'react-redux'
+import { useDispatch } from 'react-redux'
 import { createIssue } from './actions/issueActions'
 
-function IssueCreateView({ createIssue }) {
+function IssueCreateView() {
   const initialFormData = {
     title: '',
     description: ''
   }
 
   const [formData, setFormData] = useState(initialFormData)
+  const dispatch = useDispatch()
 
   function handleChange(e) {
     setFormData({ ...formData, [e.target.name]: e.target.value })
@@ -16,7 +17,7 @@ function IssueCreateView({ createIssue }) {
 
   function handleSubmit(e) {
     e.preventDefault()
-    createIssue(formData)
+    dispatch(createIssue(formData))
     setFormData(initialFormData)
   }
 
@@ -52,11 +53,4 @@ function IssueCreateView({ createIssue }) {
   )
 }
 
-const mapDispatchToProps = {
-  createIssue
-}
-
-export default connect(
-  null,
-  mapDispatchToProps
-)(IssueCreateView)
+export default IssueCreateView

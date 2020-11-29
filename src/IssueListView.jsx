@@ -1,10 +1,13 @@
 import React from 'react'
 import classNames from 'classnames'
-import { connect } from 'react-redux'
+import { useDispatch, useSelector } from 'react-redux'
 import { toggleIssue } from './actions/issueActions'
 import { Link } from 'react-router-dom'
 
-function IssueListView({ issues, toggleIssue }) {
+function IssueListView() {
+  const issues = useSelector(state => state.issues)
+  const dispatch = useDispatch()
+
   return (
     <div className="container">
       {issues.map(issue => (
@@ -14,7 +17,7 @@ function IssueListView({ issues, toggleIssue }) {
               <div className="column">
                 <label className="checkbox">
                   <input type="checkbox" className="mr-3" defaultValue={issue.complete}
-                         onChange={() => toggleIssue(issue)} />
+                         onChange={() => dispatch(toggleIssue(issue))} />
                   <span className={classNames('is-size-5', !!issue.complete && 'is-strike')}>{issue.title}</span>
                 </label>
               </div>
@@ -39,15 +42,4 @@ function IssueListView({ issues, toggleIssue }) {
   )
 }
 
-const mapStateToProps = state => ({
-  issues: state.issues
-})
-
-const mapDispatchToProps = {
-  toggleIssue
-}
-
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(IssueListView)
+export default IssueListView
