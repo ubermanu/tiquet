@@ -1,5 +1,5 @@
 import React from 'react'
-import 'halfmoon/css/halfmoon-variables.min.css'
+import 'tailwindcss/tailwind.css'
 import './App.css'
 
 import {
