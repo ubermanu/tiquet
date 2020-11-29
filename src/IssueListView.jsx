@@ -4,7 +4,7 @@ import { useDispatch, useSelector } from 'react-redux'
 import { toggleIssue } from './actions/issueActions'
 import { Link } from 'react-router-dom'
 
-function IssueListView() {
+export default function IssueListView() {
   const issues = useSelector(state => state.issues)
   const dispatch = useDispatch()
 
@@ -41,5 +41,3 @@ function IssueListView() {
     </div>
   )
 }
-
-export default IssueListView

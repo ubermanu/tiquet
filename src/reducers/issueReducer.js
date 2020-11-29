@@ -1,6 +1,6 @@
 const initialState = []
 
-function issueReducer(state = initialState, action) {
+export default function issueReducer(state = initialState, action) {
   switch (action.type) {
     case 'ADD_ISSUE': {
       return [...state, action.payload]
@@ -11,5 +11,3 @@ function issueReducer(state = initialState, action) {
   }
   return state
 }
-
-export default issueReducer

@@ -15,7 +15,7 @@ import IssueView from './IssueView'
 import IssueCreateView from './IssueCreateView'
 import NotFoundView from './NotFoundView'
 
-function App() {
+export default function App() {
   return (
     <Router>
       <main>
@@ -50,5 +50,3 @@ function App() {
     </Router>
   )
 }
-
-export default App

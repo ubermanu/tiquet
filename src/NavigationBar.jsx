@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import classNames from 'classnames'
 
-function NavigationBar() {
+export default function NavigationBar() {
   const [open, setOpen] = useState(false)
 
   return (
@@ -51,5 +51,3 @@ function NavigationBar() {
     </nav>
   )
 }
-
-export default NavigationBar

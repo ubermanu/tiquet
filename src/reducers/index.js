@@ -1,8 +1,6 @@
 import { combineReducers } from 'redux'
 import issueReducer from './issueReducer'
 
-const rootReducer = combineReducers({
+export default combineReducers({
   issues: issueReducer
 })
-
-export default rootReducer

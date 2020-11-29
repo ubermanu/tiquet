@@ -1,6 +1,6 @@
 import React from 'react'
 
-function NotFoundView() {
+export default function NotFoundView() {
   return (
     <div className="hero">
       <div className="hero-body">
@@ -12,5 +12,3 @@ function NotFoundView() {
     </div>
   )
 }
-
-export default NotFoundView

@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createIssue } from './actions/issueActions'
 
-function IssueCreateView() {
+export default function IssueCreateView() {
   const initialFormData = {
     title: '',
     description: ''
@@ -52,5 +52,3 @@ function IssueCreateView() {
     </div>
   )
 }
-
-export default IssueCreateView
