@@ -1,19 +1,14 @@
 import React from 'react'
+import { useStore } from './StoreContext'
 
 function IssueListView() {
-  const issues = [
-    {
-      uuid: 0,
-      name: 'Name of the issue',
-      description: 'Subtitle that hooks the reader and prompts them to click on the read more button.',
-      done: false
-    }
-  ]
+  const { store } = useStore()
+  const { issues } = store
 
   return (
     <div className="container">
       {issues.map(issue => (
-        <div key={issue.uuid} className="card">
+        <div key={issue.uid} className="card">
           <div className="card-content">
             <p className="title is-6">{issue.name}</p>
             <div className="content">

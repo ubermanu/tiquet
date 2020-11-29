@@ -8,6 +8,7 @@ import {
   Route
 } from 'react-router-dom'
 
+import { StoreContextProvider } from './StoreContext'
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
 import IssueView from './IssueView'
@@ -16,34 +17,34 @@ import IssueCreateView from './IssueCreateView'
 function App() {
   return (
     <Router>
-      <main>
-        <NavigationBar />
-        <section className="section">
-          <Switch>
-            <Route path="/issue/:issueId">
-              <IssueView />
-            </Route>
-            <Route path="/issues/new">
-              <IssueCreateView />
-            </Route>
-            <Route path="/issues">
-              <IssueListView />
-            </Route>
-            <Route path="/">
-              <IssueListView />
-            </Route>
-          </Switch>
-        </section>
-        <footer className="footer">
-          <div className="content has-text-centered">
-            <p>
-              <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
-              <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
-              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
-            </p>
-          </div>
-        </footer>
-      </main>
+      <StoreContextProvider>
+        <main>
+          <NavigationBar />
+          <section className="section">
+            <Switch>
+              <Route path="/issue/:issueId">
+                <IssueView />
+              </Route>
+              <Route path="/issues/new">
+                <IssueCreateView />
+              </Route>
+              <Route path="/issues">
+                <IssueListView />
+              </Route>
+              <Route path="/">
+                <IssueListView />
+              </Route>
+            </Switch>
+          </section>
+          <footer className="footer">
+            <div className="content has-text-centered">
+              <p>
+                Powered by <a href="https://github.com/ubermanu/tiquet" target="_blank">Tiquet</a>
+              </p>
+            </div>
+          </footer>
+        </main>
+      </StoreContextProvider>
     </Router>
   )
 }
