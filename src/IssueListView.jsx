@@ -1,10 +1,7 @@
 import React from 'react'
-import { useStore } from './StoreContext'
+import { connect } from 'react-redux'
 
-function IssueListView() {
-  const { store } = useStore()
-  const { issues } = store
-
+function IssueListView({ issues }) {
   return (
     <div className="container">
       {issues.map(issue => (
@@ -21,4 +18,10 @@ function IssueListView() {
   )
 }
 
-export default IssueListView
+const mapStateToProps = state => ({
+  issues: state.issues
+})
+
+export default connect(
+  mapStateToProps
+)(IssueListView)

@@ -8,7 +8,6 @@ import {
   Route
 } from 'react-router-dom'
 
-import { StoreContextProvider } from './StoreContext'
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
 import IssueView from './IssueView'
@@ -16,7 +15,6 @@ import IssueCreateView from './IssueCreateView'
 
 function App() {
   return (
-    <StoreContextProvider>
       <Router>
         <main>
           <NavigationBar />
@@ -45,7 +43,6 @@ function App() {
           </footer>
         </main>
       </Router>
-    </StoreContextProvider>
   )
 }
 
