@@ -10,7 +10,7 @@ function IssueListView() {
       {issues.map(issue => (
         <div key={issue.uid} className="card">
           <div className="card-content">
-            <p className="title is-6">{issue.name}</p>
+            <p className="title is-6">{issue.title}</p>
             <div className="content">
               <p>{issue.description}</p>
             </div>
