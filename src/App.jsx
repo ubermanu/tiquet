@@ -1,5 +1,7 @@
 import React from 'react'
 import 'halfmoon/css/halfmoon-variables.min.css'
+import './App.css'
+import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
 
 function App() {
@@ -9,9 +11,9 @@ function App() {
           data-sidebar-shortcut-enabled="true"
           data-set-preferred-mode-onload="true">
       <div className="page-wrapper with-navbar with-sidebar">
-        <div className="sticky-alerts"/>
-        <nav className="navbar"/>
-        <div className="sidebar"/>
+        <div className="sticky-alerts" />
+        <NavigationBar />
+        <div className="sidebar" />
         <div className="content-wrapper">
           <IssueListView />
         </div>
