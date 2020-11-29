@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Link } from 'react-router-dom'
+import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
 
 export default function NavigationBar() {
@@ -20,20 +20,20 @@ export default function NavigationBar() {
       </div>
       <div className={classNames('navbar-menu', open && 'is-active')}>
         <div className="navbar-start">
-          <Link to="/issues/new" className="navbar-item">
+          <NavLink exact to="/issues/new" className="navbar-item" activeClassName="is-active">
             <span className="icon">
               <i className="fa fa-plus" />
             </span>
             &nbsp;
             <span>New issue</span>
-          </Link>
-          <Link to="/issues" className="navbar-item">
+          </NavLink>
+          <NavLink exact to="/issues" className="navbar-item" activeClassName="is-active">
             <span className="icon">
               <i className="fa fa-list" />
             </span>
             &nbsp;
             <span>Issues</span>
-          </Link>
+          </NavLink>
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
