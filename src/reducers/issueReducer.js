@@ -5,15 +5,19 @@ function exclude(issue) {
 }
 
 export default function issueReducer(state = initialState, action) {
-  switch (action.type) {
+  const { type, payload } = action
+  switch (type) {
     case 'CREATE_ISSUE': {
-      return [...state, action.payload]
+      return [...state, payload]
     }
     case 'UPDATE_ISSUE': {
-      return [...state.filter(exclude(action.payload)), action.payload]
+      return [...state.filter(exclude(payload)), payload]
+    }
+    case 'TOGGLE_ISSUE': {
+      return [...state.filter(exclude(payload)), { ...payload, complete: !payload.complete }]
     }
     case 'DELETE_ISSUE': {
-      return [...state.filter(exclude(action.payload))]
+      return [...state.filter(exclude(payload))]
     }
   }
   return state

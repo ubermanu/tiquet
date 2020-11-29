@@ -9,7 +9,7 @@ export function updateIssue(payload) {
 }
 
 export function toggleIssue(payload) {
-  return { type: 'UPDATE_ISSUE', payload: { ...payload, complete: !payload.complete } }
+  return { type: 'TOGGLE_ISSUE', payload }
 }
 
 export function deleteIssue(payload) {
