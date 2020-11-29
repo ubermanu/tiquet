@@ -13,6 +13,7 @@ import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
 import IssueView from './IssueView'
 import IssueCreateView from './IssueCreateView'
+import NotFoundView from './NotFoundView'
 
 function App() {
   return (
@@ -30,8 +31,11 @@ function App() {
             <Route path="/issues">
               <IssueListView />
             </Route>
-            <Route path="/">
+            <Route exact path="/">
               <Redirect to="/issues" />
+            </Route>
+            <Route>
+              <NotFoundView />
             </Route>
           </Switch>
         </section>
