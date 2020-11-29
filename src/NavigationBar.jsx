@@ -19,9 +19,6 @@ function NavigationBar() {
       <span className="navbar-text text-monospace">v0.1</span>
       <ul
         className="navbar-nav d-none d-md-flex">
-        <li className="nav-item active">
-          <Link to="/projects" className="nav-link">Projects</Link>
-        </li>
         <li className="nav-item">
           <Link to="/issues" className="nav-link">Issues</Link>
         </li>

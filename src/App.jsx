@@ -10,7 +10,6 @@ import {
 
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
-import ProjectListView from './ProjectListView'
 
 function App() {
   return (
@@ -25,9 +24,6 @@ function App() {
           <div className="sidebar" />
           <div className="content-wrapper">
             <Switch>
-              <Route path="/projects">
-                <ProjectListView />
-              </Route>
               <Route path="/issues">
                 <IssueListView />
               </Route>
