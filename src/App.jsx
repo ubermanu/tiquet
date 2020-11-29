@@ -1,5 +1,5 @@
 import React from 'react'
-import 'tailwindcss/tailwind.css'
+import 'bulma/css/bulma.min.css'
 import './App.css'
 
 import {
