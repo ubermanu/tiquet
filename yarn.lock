@@ -1082,6 +1082,11 @@ graceful-fs@^4.1.6, graceful-fs@^4.2.0:
   resolved "https://registry.yarnpkg.com/graceful-fs/-/graceful-fs-4.2.4.tgz#2256bde14d3632958c465ebc96dc467ca07a29fb"
   integrity sha512-WjKPNJF79dtJAVniUlGGWHYGz2jWxT6VhN/4m1NdkbZ2nOsEF+cI1Edgql5zCRhs/VsQYRvrXctxktVXZUkixw==
 
+halfmoon@^1.1.1:
+  version "1.1.1"
+  resolved "https://registry.yarnpkg.com/halfmoon/-/halfmoon-1.1.1.tgz#af45c2d78bb869a408a5b72bbac2dccbe89d2aed"
+  integrity sha512-w/ydT3CixxxxdJP4a3sqSzUnCJFmhvcqE2vQOIsWCfevpqanKlbGQNUwKJH0nKvo13M89eetM3R0gsTOfNLGHA==
+
 has-flag@^3.0.0:
   version "3.0.0"
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-3.0.0.tgz#b5d454dc2199ae225699f3467e5a07f3b955bafd"
