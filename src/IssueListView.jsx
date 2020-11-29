@@ -10,6 +10,7 @@ export default function IssueListView() {
 
   return (
     <div className="container">
+      <h1 className="title is-1">Issues</h1>
       {issues.map(issue => (
         <div key={issue.id} className="card mb-4">
           <div className="card-content">

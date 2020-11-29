@@ -23,6 +23,7 @@ export default function IssueCreateView() {
 
   return (
     <div className="container">
+      <h1 className="title is-1">New issue</h1>
       <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Title</label>

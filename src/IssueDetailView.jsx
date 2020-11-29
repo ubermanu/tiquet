@@ -11,8 +11,8 @@ export default function IssueDetailView() {
     <>
       {issue ? (
         <div className="container">
+          <h1 className="title is-1">{issue.title}</h1>
           <article className="content">
-            <h2 className="content-title">{issue.title}</h2>
             <p>{issue.description}</p>
           </article>
         </div>

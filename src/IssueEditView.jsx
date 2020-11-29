@@ -28,6 +28,7 @@ export default function IssueEditView() {
     <>
       {issue ? (
         <div className="container">
+          <h1 className="title is-1">Edit an issue</h1>
           <form onSubmit={handleSubmit}>
             <div className="field">
               <label className="label">Title</label>
