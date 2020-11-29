@@ -22,7 +22,7 @@ function App() {
         <NavigationBar />
         <section className="section">
           <Switch>
-            <Route path="/issue/:issueId">
+            <Route path="/issue/:id">
               <IssueView />
             </Route>
             <Route path="/issues/new">

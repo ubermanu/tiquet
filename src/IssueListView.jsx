@@ -10,11 +10,21 @@ function IssueListView({ issues, toggleIssue }) {
       {issues.map(issue => (
         <div key={issue.id} className="card mb-4">
           <div className="card-content">
-            <label className="checkbox">
-              <input type="checkbox" className="mr-3" defaultValue={issue.complete}
-                     onChange={() => toggleIssue(issue)} />
-              <span className={classNames('is-size-5', !!issue.complete && 'is-strike')}>{issue.title}</span>
-            </label>
+            <div className="columns">
+              <div className="column">
+                <label className="checkbox">
+                  <input type="checkbox" className="mr-3" defaultValue={issue.complete}
+                         onChange={() => toggleIssue(issue)} />
+                  <span className={classNames('is-size-5', !!issue.complete && 'is-strike')}>{issue.title}</span>
+                </label>
+              </div>
+              <div className="column is-one-fifth">
+                <div className="buttons">
+                  <Link to={`/issue/${issue.id}`} className="button is-small is-light">Edit</Link>
+                  <button className="button is-small is-light is-danger">Delete</button>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       ))}
