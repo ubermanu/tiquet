@@ -10,3 +10,7 @@ main {
 .footer {
     margin-top: auto;
 }
+
+.is-strike {
+    text-decoration: line-through;
+}
