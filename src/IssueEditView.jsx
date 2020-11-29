@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Link, useParams, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { updateIssue } from './actions/issueActions'
 import { getIssueById } from './selectors/issueSelectors'
@@ -12,6 +12,7 @@ export default function IssueEditView() {
 
   const [formData, setFormData] = useState(issue)
   const dispatch = useDispatch()
+  const history = useHistory()
 
   function handleChange(e) {
     setFormData({ ...issue, [e.target.name]: e.target.value })
@@ -20,6 +21,7 @@ export default function IssueEditView() {
   function handleSubmit(e) {
     e.preventDefault()
     dispatch(updateIssue(formData))
+    history.push(`/issue/${issue.id}`)
   }
 
   return (
@@ -48,7 +50,7 @@ export default function IssueEditView() {
                 <button className="button is-link">Save</button>
               </div>
               <div className="control">
-                <button className="button is-link is-light">Cancel</button>
+                <Link to={`/issue/${issue.id}`} className="button is-link is-light">Cancel</Link>
               </div>
             </div>
           </form>
