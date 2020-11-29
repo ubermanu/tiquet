@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
 import NotFoundView from './NotFoundView'
 
-export default function IssueView() {
+export default function IssueDetailView() {
   const { id } = useParams()
   const issue = useSelector(state => state.issues.filter(issue => issue.id === id)[0])
 

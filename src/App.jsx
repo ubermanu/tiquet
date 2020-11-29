@@ -11,9 +11,10 @@ import {
 
 import NavigationBar from './NavigationBar'
 import IssueListView from './IssueListView'
-import IssueView from './IssueView'
+import IssueDetailView from './IssueDetailView'
 import IssueCreateView from './IssueCreateView'
 import NotFoundView from './NotFoundView'
+import IssueEditView from './IssueEditView'
 
 export default function App() {
   return (
@@ -22,13 +23,16 @@ export default function App() {
         <NavigationBar />
         <section className="section">
           <Switch>
-            <Route path="/issue/:id">
-              <IssueView />
+            <Route exact path="/issue/:id">
+              <IssueDetailView />
             </Route>
-            <Route path="/issues/new">
+            <Route exact path="/issue/:id/edit">
+              <IssueEditView />
+            </Route>
+            <Route exact path="/issues/new">
               <IssueCreateView />
             </Route>
-            <Route path="/issues">
+            <Route exact path="/issues">
               <IssueListView />
             </Route>
             <Route exact path="/">

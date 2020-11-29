@@ -1,11 +1,15 @@
 import { v4 as uuid } from 'uuid'
 
-export function createIssue(data) {
-  return { type: 'ADD_ISSUE', payload: { id: uuid(), complete: false, ...data } }
+export function createIssue(payload) {
+  return { type: 'CREATE_ISSUE', payload: { id: uuid(), complete: false, ...payload } }
 }
 
-export function toggleIssue(issue) {
-  return { type: 'UPDATE_ISSUE', payload: { ...issue, complete: !issue.complete } }
+export function updateIssue(payload) {
+  return { type: 'UPDATE_ISSUE', payload }
+}
+
+export function toggleIssue(payload) {
+  return { type: 'UPDATE_ISSUE', payload: { ...payload, complete: !payload.complete } }
 }
 
 export function deleteIssue(payload) {

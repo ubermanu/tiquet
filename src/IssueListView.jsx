@@ -23,7 +23,8 @@ export default function IssueListView() {
               </div>
               <div className="column is-one-fifth">
                 <div className="buttons">
-                  <Link to={`/issue/${issue.id}`} className="button is-small is-light">Edit</Link>
+                  <Link to={`/issue/${issue.id}`} className="button is-small is-light">Show</Link>
+                  <Link to={`/issue/${issue.id}/edit`} className="button is-small is-light">Edit</Link>
                   <button className="button is-small is-light is-danger" onClick={() => dispatch(deleteIssue(issue))}>
                     Delete
                   </button>
