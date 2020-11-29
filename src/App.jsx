@@ -4,7 +4,19 @@ import IssueListView from './IssueListView'
 
 function App() {
   return (
-    <IssueListView />
+    <main className="with-custom-webkit-scrollbars with-custom-css-scrollbars"
+          data-dm-shortcut-enabled="true"
+          data-sidebar-shortcut-enabled="true"
+          data-set-preferred-mode-onload="true">
+      <div className="page-wrapper with-navbar with-sidebar">
+        <div className="sticky-alerts"/>
+        <nav className="navbar"/>
+        <div className="sidebar"/>
+        <div className="content-wrapper">
+          <IssueListView />
+        </div>
+      </div>
+    </main>
   )
 }
 
