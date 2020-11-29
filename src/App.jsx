@@ -14,25 +14,27 @@ import IssueListView from './IssueListView'
 function App() {
   return (
     <Router>
-      <main className="with-custom-webkit-scrollbars with-custom-css-scrollbars"
-            data-dm-shortcut-enabled="true"
-            data-sidebar-shortcut-enabled="true"
-            data-set-preferred-mode-onload="true">
-        <div className="page-wrapper with-navbar with-sidebar">
-          <div className="sticky-alerts" />
-          <NavigationBar />
-          <div className="sidebar" />
-          <div className="content-wrapper">
-            <Switch>
-              <Route path="/issues">
-                <IssueListView />
-              </Route>
-              <Route path="/">
-                <IssueListView />
-              </Route>
-            </Switch>
+      <main>
+        <NavigationBar />
+        <section className="container">
+          <Switch>
+            <Route path="/issues">
+              <IssueListView />
+            </Route>
+            <Route path="/">
+              <IssueListView />
+            </Route>
+          </Switch>
+        </section>
+        <footer className="footer">
+          <div className="content has-text-centered">
+            <p>
+              <strong>Bulma</strong> by <a href="https://jgthms.com">Jeremy Thomas</a>. The source code is licensed
+              <a href="http://opensource.org/licenses/mit-license.php">MIT</a>. The website content
+              is licensed <a href="http://creativecommons.org/licenses/by-nc-sa/4.0/">CC BY NC SA 4.0</a>.
+            </p>
           </div>
-        </div>
+        </footer>
       </main>
     </Router>
   )

@@ -1,56 +1,35 @@
 import React from 'react'
-
-
 import { Link } from 'react-router-dom'
 
 function NavigationBar() {
   return (
-    <nav className="navbar">
-      <div className="navbar-content">
-        <button className="btn btn-action" type="button">
-          <i className="fa fa-bars" aria-hidden="true" />
-          <span className="sr-only">Toggle sidebar</span>
-        </button>
+    <nav className="navbar" role="navigation" aria-label="main navigation">
+      <div className="navbar-brand">
+        <Link to="/" className="navbar-item">
+          <span>🦟</span>
+        </Link>
+        <a role="button" className="navbar-burger burger" aria-label="menu" aria-expanded="false"
+           data-target="navbarBasicExample">
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+          <span aria-hidden="true" />
+        </a>
       </div>
-      <a href="#" className="navbar-brand">
-        <span>🦟</span>
-        <span>Tiquet</span>
-      </a>
-      <span className="navbar-text text-monospace">v0.1</span>
-      <ul
-        className="navbar-nav d-none d-md-flex">
-        <li className="nav-item">
-          <Link to="/issues" className="nav-link">Issues</Link>
-        </li>
-        <li className="nav-item">
-          <Link to="/settings" className="nav-link">Settings</Link>
-        </li>
-      </ul>
-      <form className="form-inline d-none d-md-flex ml-auto" action="">
-        <input type="text" className="form-control" placeholder="Search anything..." required={true} />
-        <button className="btn btn-primary" type="submit">
-          <i className="fa fa-search" aria-hidden="true" />
-        </button>
-      </form>
-      <div
-        className="navbar-content d-md-none ml-auto">
-        <div className="dropdown with-arrow">
-          <button className="btn" data-toggle="dropdown" type="button" id="navbar-dropdown-toggle-btn-1">
-            Menu
-            <i className="fa fa-angle-down" aria-hidden="true" />
-          </button>
-          <div className="dropdown-menu dropdown-menu-right w-200"
-               aria-labelledby="navbar-dropdown-toggle-btn-1">
-            <a href="#" className="dropdown-item">Docs</a>
-            <a href="#" className="dropdown-item">Products</a>
-            <div className="dropdown-divider"></div>
-            <div className="dropdown-content">
-              <form action="..." method="...">
-                <div className="form-group">
-                  <input type="text" className="form-control" placeholder="Email address" required="required" />
-                </div>
-                <button className="btn btn-primary btn-block" type="submit">Sign up</button>
-              </form>
+      <div id="navbarBasicExample" className="navbar-menu">
+        <div className="navbar-start">
+          <Link to="/" className="navbar-item">Home</Link>
+          <Link to="/issues" className="navbar-item">Issues</Link>
+          <Link to="/settings" className="navbar-item">Settings</Link>
+        </div>
+        <div className="navbar-end">
+          <div className="navbar-item">
+            <div className="buttons">
+              <a className="button is-primary">
+                <strong>Sign up</strong>
+              </a>
+              <a className="button is-light">
+                <span>Log in</span>
+              </a>
             </div>
           </div>
         </div>
