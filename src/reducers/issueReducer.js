@@ -8,6 +8,9 @@ export default function issueReducer(state = initialState, action) {
     case 'UPDATE_ISSUE': {
       return [...state.filter(({ id }) => id !== action.payload.id), action.payload]
     }
+    case 'DELETE_ISSUE': {
+      return [...state.filter(({ id }) => id !== action.payload.id)]
+    }
   }
   return state
 }

@@ -7,3 +7,7 @@ export function createIssue(data) {
 export function toggleIssue(issue) {
   return { type: 'UPDATE_ISSUE', payload: { ...issue, complete: !issue.complete } }
 }
+
+export function deleteIssue(payload) {
+  return { type: 'DELETE_ISSUE', payload }
+}

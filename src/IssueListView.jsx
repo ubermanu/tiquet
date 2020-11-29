@@ -1,7 +1,7 @@
 import React from 'react'
 import classNames from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
-import { toggleIssue } from './actions/issueActions'
+import { toggleIssue, deleteIssue } from './actions/issueActions'
 import { Link } from 'react-router-dom'
 
 export default function IssueListView() {
@@ -24,7 +24,9 @@ export default function IssueListView() {
               <div className="column is-one-fifth">
                 <div className="buttons">
                   <Link to={`/issue/${issue.id}`} className="button is-small is-light">Edit</Link>
-                  <button className="button is-small is-light is-danger">Delete</button>
+                  <button className="button is-small is-light is-danger" onClick={() => dispatch(deleteIssue(issue))}>
+                    Delete
+                  </button>
                 </div>
               </div>
             </div>
