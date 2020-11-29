@@ -2,6 +2,7 @@ import React from 'react'
 import classNames from 'classnames'
 import { connect } from 'react-redux'
 import { toggleIssue } from './actions/issueActions'
+import { Link } from 'react-router-dom'
 
 function IssueListView({ issues, toggleIssue }) {
   return (
@@ -17,6 +18,13 @@ function IssueListView({ issues, toggleIssue }) {
           </div>
         </div>
       ))}
+      {issues.length === 0 && (
+        <article className="message">
+          <div className="message-body">
+            No issues found, <Link to="/issues/new">create a new one</Link>
+          </div>
+        </article>
+      )}
     </div>
   )
 }
