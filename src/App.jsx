@@ -5,7 +5,8 @@ import './App.css'
 import {
   BrowserRouter as Router,
   Switch,
-  Route
+  Route,
+  Redirect
 } from 'react-router-dom'
 
 import NavigationBar from './NavigationBar'
@@ -15,34 +16,34 @@ import IssueCreateView from './IssueCreateView'
 
 function App() {
   return (
-      <Router>
-        <main>
-          <NavigationBar />
-          <section className="section">
-            <Switch>
-              <Route path="/issue/:issueId">
-                <IssueView />
-              </Route>
-              <Route path="/issues/new">
-                <IssueCreateView />
-              </Route>
-              <Route path="/issues">
-                <IssueListView />
-              </Route>
-              <Route path="/">
-                <IssueListView />
-              </Route>
-            </Switch>
-          </section>
-          <footer className="footer">
-            <div className="content has-text-centered">
-              <p>
-                Powered by <a href="https://github.com/ubermanu/tiquet" target="_blank">Tiquet</a>
-              </p>
-            </div>
-          </footer>
-        </main>
-      </Router>
+    <Router>
+      <main>
+        <NavigationBar />
+        <section className="section">
+          <Switch>
+            <Route path="/issue/:issueId">
+              <IssueView />
+            </Route>
+            <Route path="/issues/new">
+              <IssueCreateView />
+            </Route>
+            <Route path="/issues">
+              <IssueListView />
+            </Route>
+            <Route path="/">
+              <Redirect to="/issues" />
+            </Route>
+          </Switch>
+        </section>
+        <footer className="footer">
+          <div className="content has-text-centered">
+            <p>
+              Powered by <a href="https://github.com/ubermanu/tiquet" target="_blank">Tiquet</a>
+            </p>
+          </div>
+        </footer>
+      </main>
+    </Router>
   )
 }
 
