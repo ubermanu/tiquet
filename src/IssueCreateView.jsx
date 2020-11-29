@@ -1,20 +1,41 @@
-import React from 'react'
+import React, { useState } from 'react'
+import { useStore } from './StoreContext'
 
 function IssueCreateView() {
+  const initialFormData = {
+    title: '',
+    description: ''
+  }
+
+  const { dispatch } = useStore()
+  const [formData, setFormData] = useState(initialFormData)
+
+  function handleChange(e) {
+    setFormData({ ...formData, [e.target.name]: e.target.value })
+  }
+
+  function handleSubmit(e) {
+    e.preventDefault()
+    dispatch({ type: 'ISSUE.ADD', payload: formData })
+    setFormData(initialFormData)
+  }
+
   return (
     <div className="container">
-      <form>
+      <form onSubmit={handleSubmit}>
         <div className="field">
           <label className="label">Title</label>
           <div className="control">
-            <input className="input" type="text" />
+            <input name="title" className="input" type="text" required={true}
+                   onChange={handleChange} value={formData.title} />
           </div>
         </div>
 
         <div className="field">
           <label className="label">Description</label>
           <div className="control">
-            <textarea className="textarea" />
+            <textarea name="description" className="textarea"
+                      onChange={handleChange} value={formData.description} />
           </div>
         </div>
 
