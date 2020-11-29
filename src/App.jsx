@@ -16,7 +16,7 @@ function App() {
     <Router>
       <main>
         <NavigationBar />
-        <section className="container">
+        <section className="section">
           <Switch>
             <Route path="/issues">
               <IssueListView />
