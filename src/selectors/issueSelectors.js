@@ -8,7 +8,7 @@ export function getIssueById(id) {
 export function getIssuesByKeyword(query) {
   // Do not return results if there are no query
   if (typeof query !== 'string' || query.length === 0) {
-    return []
+    return useSelector(_ => [])
   }
 
   const regExp = new RegExp(query || '', 'i')
