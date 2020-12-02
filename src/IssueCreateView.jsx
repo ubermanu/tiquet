@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createIssue } from './actions/issueActions'
+import { getIssuesByKeyword } from './selectors/issueSelectors'
 
 export default function IssueCreateView() {
   const initialFormData = {
@@ -21,35 +22,58 @@ export default function IssueCreateView() {
     setFormData(initialFormData)
   }
 
+  // Find issues that would match the new one
+  const alikeIssues = getIssuesByKeyword(formData.title)
+
   return (
     <div className="container">
       <h1 className="title is-1">New issue</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="field">
-          <label className="label">Title</label>
-          <div className="control">
-            <input name="title" className="input" type="text" required={true}
-                   onChange={handleChange} value={formData.title} />
-          </div>
-        </div>
+      <dov className="columns">
+        <div className="column is-half">
+          <form onSubmit={handleSubmit}>
+            <div className="field">
+              <label className="label">Title</label>
+              <div className="control">
+                <input name="title" className="input" type="text" required={true}
+                       onChange={handleChange} value={formData.title} />
+              </div>
+            </div>
 
-        <div className="field">
-          <label className="label">Description</label>
-          <div className="control">
+            <div className="field">
+              <label className="label">Description</label>
+              <div className="control">
             <textarea name="description" className="textarea"
                       onChange={handleChange} value={formData.description} />
-          </div>
-        </div>
+              </div>
+            </div>
 
-        <div className="field is-grouped">
-          <div className="control">
-            <button className="button is-link">Submit</button>
-          </div>
-          <div className="control">
-            <button className="button is-link is-light">Cancel</button>
-          </div>
+            <div className="field is-grouped">
+              <div className="control">
+                <button className="button is-link">Submit</button>
+              </div>
+              <div className="control">
+                <button className="button is-link is-light">Cancel</button>
+              </div>
+            </div>
+          </form>
         </div>
-      </form>
+        <div className="column is-half">
+          {alikeIssues.length > 0 && (
+            <article className="message is-small">
+              <div className="message-body">
+                🔎 Check if the issue does not exist already...
+              </div>
+            </article>
+          )}
+          {alikeIssues.map(issue => (
+            <div className="card mb-4" key={issue.id}>
+              <div className="card-content">
+                <span className="is-size-6">{issue.title}</span>
+              </div>
+            </div>
+          ))}
+        </div>
+      </dov>
     </div>
   )
 }
