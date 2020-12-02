@@ -1,6 +1,7 @@
 import React, { useState } from 'react'
 import { NavLink } from 'react-router-dom'
 import classNames from 'classnames'
+import NavigationSearch from './NavigationSearch'
 
 export default function NavigationBar() {
   const [open, setOpen] = useState(false)
@@ -37,16 +38,7 @@ export default function NavigationBar() {
         </div>
         <div className="navbar-end">
           <div className="navbar-item">
-            <form action={`/search`}>
-              <div className="field">
-                <div className="control has-icons-left has-icons-right">
-                  <input className="input" type="text" name="q" placeholder="Find an issue..." />
-                  <span className="icon is-small is-left">
-                    <i className="fas fa-search" />
-                  </span>
-                </div>
-              </div>
-            </form>
+            <NavigationSearch />
           </div>
         </div>
       </div>
