@@ -29,7 +29,7 @@ export default function IssueCreatePage() {
   return (
     <div className="container">
       <h1 className="title is-1">New issue</h1>
-      <dov className="columns">
+      <div className="columns">
         <div className="column is-half">
           <form onSubmit={handleSubmit}>
             <div className="field">
@@ -73,7 +73,7 @@ export default function IssueCreatePage() {
             </div>
           ))}
         </div>
-      </dov>
+      </div>
     </div>
   )
 }
