@@ -22,3 +22,10 @@ main {
     left: 2rem;
     bottom: 2rem;
 }
+
+.notification .progress {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    opacity: 0.2;
+}
