@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { createIssue } from './actions/issueActions'
 import { getIssuesByKeyword } from './selectors/issueSelectors'
+import { Link } from 'react-router-dom'
 
 export default function IssueCreatePage() {
   const initialFormData = {
@@ -42,8 +43,8 @@ export default function IssueCreatePage() {
             <div className="field">
               <label className="label">Description</label>
               <div className="control">
-            <textarea name="description" className="textarea"
-                      onChange={handleChange} value={formData.description} />
+                <textarea name="description" className="textarea"
+                          onChange={handleChange} value={formData.description} />
               </div>
             </div>
 
@@ -52,7 +53,7 @@ export default function IssueCreatePage() {
                 <button className="button is-link">Submit</button>
               </div>
               <div className="control">
-                <button className="button is-link is-light">Cancel</button>
+                <Link to={`/issues`} className="button is-link is-light">Cancel</Link>
               </div>
             </div>
           </form>
