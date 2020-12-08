@@ -58,13 +58,12 @@ export default function IssueCreatePage() {
           </form>
         </div>
         <div className="column is-half">
-          {alikeIssues.length > 0 && (
-            <article className="message is-small">
-              <div className="message-body">
-                🔎 Check if the issue does not exist already...
-              </div>
-            </article>
-          )}
+          <div className="label">Matching issues</div>
+          <article className="message is-small">
+            <div className="message-body">
+              Check if the issue does not exist already
+            </div>
+          </article>
           {alikeIssues.map(issue => (
             <div className="card mb-4" key={issue.id}>
               <div className="card-content">
