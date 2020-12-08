@@ -1,6 +1,6 @@
 import React from 'react'
 
-export default function NotFoundView() {
+export default function NotFoundPage() {
   return (
     <div className="hero">
       <div className="hero-body">

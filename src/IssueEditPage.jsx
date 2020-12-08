@@ -3,7 +3,7 @@ import { Link, useParams, useHistory } from 'react-router-dom'
 import { useDispatch } from 'react-redux'
 import { updateIssue } from './actions/issueActions'
 import { getIssueById } from './selectors/issueSelectors'
-import NotFoundView from './NotFoundView'
+import NotFoundPage from './NotFoundPage'
 
 export default function IssueEditView() {
 
@@ -57,7 +57,7 @@ export default function IssueEditView() {
           </form>
         </div>
       ) : (
-        <NotFoundView />
+        <NotFoundPage />
       )}
     </>
   )

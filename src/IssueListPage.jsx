@@ -2,21 +2,15 @@ import React from 'react'
 import classNames from 'classnames'
 import { useDispatch, useSelector } from 'react-redux'
 import { toggleIssue, deleteIssue } from './actions/issueActions'
-import { Link, useLocation } from 'react-router-dom'
-import queryString from 'query-string'
-import { getIssuesByKeyword } from './selectors/issueSelectors'
+import { Link } from 'react-router-dom'
 
-export default function SearchResultView() {
-  const location = useLocation()
-  const query = queryString.parse(location.search)
-  const keyword = query.q || ''
-
-  const issues = getIssuesByKeyword(keyword)
+export default function IssueListPage() {
+  const issues = useSelector(state => state.issues)
   const dispatch = useDispatch()
 
   return (
     <div className="container">
-      <h1 className="title is-1">Search: "{keyword}"</h1>
+      <h1 className="title is-1">Issues</h1>
       {issues.map(issue => (
         <div key={issue.id} className="card mb-4">
           <div className="card-content">
@@ -44,7 +38,7 @@ export default function SearchResultView() {
       {issues.length === 0 && (
         <article className="message">
           <div className="message-body">
-            No results found
+            No issues found, <Link to="/issues/new">create a new one</Link>
           </div>
         </article>
       )}

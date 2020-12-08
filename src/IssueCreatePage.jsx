@@ -3,7 +3,7 @@ import { useDispatch } from 'react-redux'
 import { createIssue } from './actions/issueActions'
 import { getIssuesByKeyword } from './selectors/issueSelectors'
 
-export default function IssueCreateView() {
+export default function IssueCreatePage() {
   const initialFormData = {
     title: '',
     description: ''

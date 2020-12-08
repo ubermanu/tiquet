@@ -2,7 +2,7 @@ import React, { useState } from 'react'
 import queryString from 'query-string'
 import { useHistory } from 'react-router-dom'
 
-export default function NavigationSearch() {
+export default function NavigationSearchForm() {
   const [formData, setFormData] = useState({})
   const history = useHistory()
 

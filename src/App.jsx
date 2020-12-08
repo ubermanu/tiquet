@@ -10,13 +10,13 @@ import {
 } from 'react-router-dom'
 
 import NavigationBar from './NavigationBar'
-import IssueListView from './IssueListView'
-import IssueDetailView from './IssueDetailView'
-import IssueCreateView from './IssueCreateView'
-import NotFoundView from './NotFoundView'
-import IssueEditView from './IssueEditView'
+import IssueListPage from './IssueListPage'
+import IssueDetailPage from './IssueDetailPage'
+import IssueCreatePage from './IssueCreatePage'
+import NotFoundPage from './NotFoundPage'
+import IssueEditPage from './IssueEditPage'
 import Toast from './Toast'
-import SearchResultView from './SearchResultView'
+import SearchResultPage from './SearchResultPage'
 
 export default function App() {
   return (
@@ -27,25 +27,25 @@ export default function App() {
         <section className="section">
           <Switch>
             <Route exact path="/issue/:id">
-              <IssueDetailView />
+              <IssueDetailPage />
             </Route>
             <Route exact path="/issue/:id/edit">
-              <IssueEditView />
+              <IssueEditPage />
             </Route>
             <Route exact path="/issues/new">
-              <IssueCreateView />
+              <IssueCreatePage />
             </Route>
             <Route exact path="/issues">
-              <IssueListView />
+              <IssueListPage />
             </Route>
             <Route exact path="/search">
-              <SearchResultView />
+              <SearchResultPage />
             </Route>
             <Route exact path="/">
               <Redirect to="/issues" />
             </Route>
             <Route path="*">
-              <NotFoundView />
+              <NotFoundPage />
             </Route>
           </Switch>
         </section>

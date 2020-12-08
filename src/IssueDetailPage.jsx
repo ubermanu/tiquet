@@ -1,9 +1,9 @@
 import React from 'react'
 import { useParams } from 'react-router-dom'
 import { useSelector } from 'react-redux'
-import NotFoundView from './NotFoundView'
+import NotFoundPage from './NotFoundPage'
 
-export default function IssueDetailView() {
+export default function IssueDetailPage() {
   const { id } = useParams()
   const issue = useSelector(state => state.issues.filter(issue => issue.id === id)[0])
 
@@ -17,7 +17,7 @@ export default function IssueDetailView() {
           </article>
         </div>
       ) : (
-        <NotFoundView />
+        <NotFoundPage />
       )}
     </>
   )
