@@ -15,7 +15,7 @@ import IssueDetailPage from './IssueDetailPage'
 import IssueCreatePage from './IssueCreatePage'
 import NotFoundPage from './NotFoundPage'
 import IssueEditPage from './IssueEditPage'
-import Toast from './Toast'
+import ToastRenderer from './ToastRenderer'
 import SearchResultPage from './SearchResultPage'
 
 export default function App() {
@@ -23,7 +23,7 @@ export default function App() {
     <Router>
       <main>
         <NavigationBar />
-        <Toast />
+        <ToastRenderer />
         <section className="section">
           <Switch>
             <Route exact path="/issue/:id">
