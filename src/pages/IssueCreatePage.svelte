@@ -1,42 +1,35 @@
 <script>
-  // import { createIssue } from './actions/issueActions'
-  // import { getIssuesByKeyword } from './selectors/issueSelectors'
-
   import { writable } from 'svelte/store'
+  import issueStore from '../stores/issueStore'
 
-  const form = writable({
+  let state = writable({
     title: '',
     description: ''
   })
 
-  // const dispatch = useDispatch()
-
   function handleSubmit(e) {
     e.preventDefault()
-    // dispatch(createIssue(formData))
-    // setFormData(initialFormData)
+    issueStore.add(state)
+    e.target.reset()
   }
-
-  // Find issues that would match the new one
-  // const alikeIssues = getIssuesByKeyword(formData.title)
 </script>
 
 <div class="container">
   <h1 class="title is-1">New issue</h1>
   <div class="columns">
     <div class="column is-half">
-      <form onSubmit={handleSubmit}>
+      <form on:submit={handleSubmit}>
         <div class="field">
           <label class="label">Title</label>
           <div class="control">
-            <input name="title" class="input" type="text" bind:value={form.title} required />
+            <input name="title" class="input" type="text" bind:value={$state.title} required />
           </div>
         </div>
 
         <div class="field">
           <label class="label">Description</label>
           <div class="control">
-            <textarea name="description" class="textarea" bind:value={form.description}></textarea>
+            <textarea name="description" class="textarea" bind:value={$state.description}></textarea>
           </div>
         </div>
 
