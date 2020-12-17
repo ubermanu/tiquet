@@ -17,14 +17,14 @@
   </div>
   <div class="navbar-menu" class:is-active={opened}>
     <div class="navbar-start">
-      <a href="/issues/new" class="navbar-item">
+      <a href="#/issues/new" class="navbar-item">
         <span class="icon">
           <i class="fa fa-plus"></i>
         </span>
         {' '}
         <span>New issue</span>
       </a>
-      <a href="/issues" class="navbar-item">
+      <a href="#/issues" class="navbar-item">
         <span class="icon">
           <i class="fa fa-list"></i>
         </span>
