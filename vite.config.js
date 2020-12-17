@@ -1,15 +1,11 @@
-// @ts-check
-import reactPlugin from 'vite-plugin-react'
+import { svelte } from 'vite-plugin-svelte'
 
 /**
  * @type { import('vite').UserConfig }
  */
 const config = {
-  jsx: 'react',
-  plugins: [reactPlugin],
-  optimizeDeps: {
-    exclude: ['prop-types']
-  }
+  plugins: [svelte()],
+  rollupDedupe: ['svelte']
 }
 
 export default config
