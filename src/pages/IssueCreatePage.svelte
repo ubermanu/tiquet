@@ -20,16 +20,16 @@
     <div class="column is-half">
       <form on:submit={handleSubmit}>
         <div class="field">
-          <label class="label">Title</label>
+          <label class="label" for="issue-title">Title</label>
           <div class="control">
-            <input name="title" class="input" type="text" bind:value={$state.title} required />
+            <input id="issue-title" name="title" class="input" type="text" bind:value={$state.title} required />
           </div>
         </div>
 
         <div class="field">
-          <label class="label">Description</label>
+          <label class="label" for="issue-desc">Description</label>
           <div class="control">
-            <textarea name="description" class="textarea" bind:value={$state.description}></textarea>
+            <textarea id="issue-desc" name="description" class="textarea" bind:value={$state.description}></textarea>
           </div>
         </div>
 
@@ -38,7 +38,7 @@
             <button class="button is-link">Submit</button>
           </div>
           <div class="control">
-            <!--            <Link to={`/issues`} class="button is-link is-light">Cancel</Link>-->
+            <a href="#/issues" class="button is-link is-light">Cancel</a>
           </div>
         </div>
       </form>
