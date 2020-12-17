@@ -1,9 +1,11 @@
-import { writable } from 'svelte/store'
+import { writable, get } from 'svelte/store'
 
-const { subscribe, set, update } = writable([])
+export const issueStore = writable([])
+const { subscribe, set, update } = issueStore
 
 export default {
   subscribe,
   add: (issue) => update(issues => [...issues, issue]),
+  find: (issueId) => get(issueStore).filter(({ id }) => id === issueId)[0],
   reset: () => set([])
 }
