@@ -4,6 +4,20 @@
   import NavigationBar from './NavigationBar.svelte'
 </script>
 
+<style>
+    @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css";
+
+    main {
+        display: flex;
+        flex-direction: column;
+        min-height: 100vh;
+    }
+
+    .footer {
+        margin-top: auto;
+    }
+</style>
+
 <main>
   <NavigationBar />
   <!--    <ToastRenderer />-->
