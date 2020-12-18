@@ -29,7 +29,7 @@
       </div>
     </div>
   {/each}
-  {#if $issues.length > 0}
+  {#if $issues.length === 0}
     <article class="message">
       <div class="message-body">
         No issues found,
