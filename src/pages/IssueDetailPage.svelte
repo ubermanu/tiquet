@@ -3,7 +3,7 @@
   import { findIssueById } from '../stores/issues'
 
   export let params = {}
-  $: issue = findIssueById(params.id)
+  const issue = findIssueById(params.id)
 </script>
 
 {#if issue}
