@@ -1,12 +1,14 @@
 <script>
   import NotFoundPage from './NotFoundPage.svelte'
   import { findIssueById, saveIssue } from '../stores/issues'
+  import { writable } from 'svelte/store'
 
   export let params = {}
-  $: issue = findIssueById(params.id)
+  const issue = findIssueById(params.id)
+  let update = writable({ ...issue })
 
   function handleSubmit() {
-    saveIssue(issue)
+    saveIssue({ ...issue, ...$update })
   }
 </script>
 
@@ -17,14 +19,14 @@
       <div class="field">
         <label class="label">Title</label>
         <div class="control">
-          <input name="title" class="input" type="text" required bind:value={issue.title} />
+          <input name="title" class="input" type="text" required bind:value={$update.title} />
         </div>
       </div>
 
       <div class="field">
         <label class="label">Description</label>
         <div class="control">
-          <textarea name="description" class="textarea" bind:value={issue.description}></textarea>
+          <textarea name="description" class="textarea" bind:value={$update.description}></textarea>
         </div>
       </div>
 
