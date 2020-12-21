@@ -5,17 +5,15 @@
   export let params = {}
   $: issue = findIssueById(params.id)
 
-  function handleSubmit(e) {
-    e.preventDefault()
+  function handleSubmit() {
     saveIssue(issue)
-    // history.push(`#/issue/${issue.id}`)
   }
 </script>
 
 {#if issue}
   <div class="container">
     <h1 class="title is-1">Edit an issue</h1>
-    <form on:submit={handleSubmit}>
+    <form on:submit|preventDefault={handleSubmit}>
       <div class="field">
         <label class="label">Title</label>
         <div class="control">

@@ -1,9 +1,8 @@
 import { writable, get } from 'svelte/store'
-import { exclude } from './filters'
 import { v4 as uuid } from 'uuid'
 
-const issues = writable([])
-const { update } = issues
+const store = writable([])
+const { update } = store
 
 export function addIssue(issue) {
   update(issues => [...issues, { id: uuid(), complete: false, ...issue }])
@@ -11,17 +10,17 @@ export function addIssue(issue) {
 
 export function findIssuesByKeyword(query) {
   const regExp = new RegExp(query || '', 'i')
-  return get(issues).filter(issue => {
+  return get(store).filter(issue => {
     return regExp.test(issue.title) || regExp.test(issue.description)
   })
 }
 
 export function findIssueById(issueId) {
-  return get(issues).filter(({ id }) => id === issueId)[0]
+  return get(store).filter(({ id }) => id === issueId)[0]
 }
 
 export function saveIssue(issue) {
-  update(issues => [...issues.filter(exclude(issue.id)), issue])
+  update(issues => [...issues.filter(({ id }) => id !== issue.id), issue])
 }
 
-export default issues
+export default store
