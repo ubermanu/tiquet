@@ -7,5 +7,6 @@ export default {
   '/issues/new': IssueCreatePage,
   '/issues/:id': IssueDetailPage,
   '/issues': IssueListPage,
+  '/': IssueListPage,
   '*': NotFoundPage
 }
