@@ -1,5 +1,5 @@
 <script>
-  import NavigationSearchForm from './NavigationSearchForm.svelte'
+  import SearchForm from './NavbarSearchForm.svelte'
 
   let opened = false
 </script>
@@ -35,7 +35,7 @@
     </div>
     <div class="navbar-end">
       <div class="navbar-item">
-        <NavigationSearchForm />
+        <SearchForm />
       </div>
     </div>
   </div>

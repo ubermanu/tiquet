@@ -12,7 +12,7 @@
   }
 </script>
 
-<form action="#/search" onSubmit={handleSubmit}>
+<form action="#/search" on:submit={handleSubmit}>
   <div class="field">
     <div class="control has-icons-left has-icons-right">
       <input class="input" type="text" name="q" placeholder="Find an issue..."
