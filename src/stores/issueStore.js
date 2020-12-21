@@ -1,5 +1,5 @@
 import { writable, get } from 'svelte/store'
-import { exclude } from '../reducers/filters'
+import { exclude } from './filters'
 
 export const issueStore = writable([])
 const { subscribe, set, update } = issueStore
