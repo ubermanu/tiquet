@@ -1,13 +1,13 @@
 <script>
   import NotFoundPage from './NotFoundPage.svelte'
-  import issueStore from '../stores/issueStore'
+  import { findIssueById, saveIssue } from '../stores/issues'
 
   export let params = {}
-  $: issue = issueStore.find(params.id)
+  $: issue = findIssueById(params.id)
 
   function handleSubmit(e) {
     e.preventDefault()
-    issueStore.save(issue)
+    saveIssue(issue)
     // history.push(`#/issue/${issue.id}`)
   }
 </script>

@@ -1,14 +1,14 @@
 <script>
   import queryString from 'query-string'
-  import issueStore from '../stores/issueStore'
+  import { findIssuesByKeyword } from '../stores/issues'
 
   const query = queryString.parse(location.search)
   const keyword = query.q || ''
-  const issues = issueStore.findByKeyword(keyword)
+  const results = findIssuesByKeyword(keyword)
 </script>
 <div class="container">
   <h1 class="title is-1">Search: "{keyword}"</h1>
-  {#each issues as issue}
+  {#each results as issue}
     <div class="card mb-4">
       <div class="card-content">
         <div class="columns">
@@ -31,7 +31,7 @@
       </div>
     </div>
   {/each}
-  {#if issues.length === 0}
+  {#if results.length === 0}
     <article class="message">
       <div class="message-body">
         No results found

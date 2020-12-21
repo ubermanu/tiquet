@@ -1,7 +1,5 @@
 <script>
-  import issueStore from '../stores/issueStore'
-
-  $: issues = issueStore
+  import issues from '../stores/issues'
 </script>
 
 <div class="container">

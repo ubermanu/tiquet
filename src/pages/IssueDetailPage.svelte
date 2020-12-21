@@ -1,9 +1,9 @@
 <script>
   import NotFoundPage from './NotFoundPage.svelte'
-  import issueStore from '../stores/issueStore'
+  import { findIssueById } from '../stores/issues'
 
   export let params = {}
-  $: issue = issueStore.find(params.id)
+  $: issue = findIssueById(params.id)
 </script>
 
 {#if issue}

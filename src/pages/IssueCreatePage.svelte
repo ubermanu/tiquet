@@ -1,15 +1,15 @@
 <script>
   import { writable } from 'svelte/store'
-  import issueStore from '../stores/issueStore'
+  import { addIssue } from '../stores/issues'
 
-  let state = writable({
+  let issue = writable({
     title: '',
     description: ''
   })
 
   function handleSubmit(e) {
     e.preventDefault()
-    issueStore.add(state)
+    addIssue(issue)
     e.target.reset()
   }
 </script>
@@ -22,14 +22,14 @@
         <div class="field">
           <label class="label" for="issue-title">Title</label>
           <div class="control">
-            <input id="issue-title" name="title" class="input" type="text" bind:value={$state.title} required />
+            <input id="issue-title" name="title" class="input" type="text" bind:value={$issue.title} required />
           </div>
         </div>
 
         <div class="field">
           <label class="label" for="issue-desc">Description</label>
           <div class="control">
-            <textarea id="issue-desc" name="description" class="textarea" bind:value={$state.description}></textarea>
+            <textarea id="issue-desc" name="description" class="textarea" bind:value={$issue.description}></textarea>
           </div>
         </div>
 
