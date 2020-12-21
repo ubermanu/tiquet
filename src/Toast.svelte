@@ -41,5 +41,5 @@
 <div class="notification pb-5 {message.level}">
   <button class="delete" onClick={() => handleDelete(message)}></button>
   {message.body}
-  <progress class="progress is-small is-radiusless" bind:value={$progress} max="100">15%</progress>
+  <progress class="progress is-small is-radiusless" value={$progress} max="100">15%</progress>
 </div>
