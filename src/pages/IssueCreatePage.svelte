@@ -8,8 +8,7 @@
   })
 
   function handleSubmit(e) {
-    e.preventDefault()
-    addIssue(issue)
+    addIssue($issue)
     e.target.reset()
   }
 </script>
@@ -18,7 +17,7 @@
   <h1 class="title is-1">New issue</h1>
   <div class="columns">
     <div class="column is-half">
-      <form on:submit={handleSubmit}>
+      <form on:submit|preventDefault={handleSubmit}>
         <div class="field">
           <label class="label" for="issue-title">Title</label>
           <div class="control">

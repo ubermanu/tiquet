@@ -16,8 +16,8 @@
           </div>
           <div class="column is-one-fifth">
             <div class="buttons">
-              <a href="#/issue/${issue.id}" class="button is-small is-light">Show</a>
-              <a href="#/issue/${issue.id}/edit" class="button is-small is-light">Edit</a>
+              <a href="#/issue/{issue.id}" class="button is-small is-light">Show</a>
+              <a href="#/issue/{issue.id}/edit" class="button is-small is-light">Edit</a>
               <button class="button is-small is-light is-danger">
                 Delete
               </button>

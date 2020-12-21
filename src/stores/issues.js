@@ -1,11 +1,12 @@
 import { writable, get } from 'svelte/store'
 import { exclude } from './filters'
+import { v4 as uuid } from 'uuid'
 
 const issues = writable([])
 const { update } = issues
 
 export function addIssue(issue) {
-  update(issues => [...issues, issue])
+  update(issues => [...issues, { id: uuid(), complete: false, ...issue }])
 }
 
 export function findIssuesByKeyword(query) {
