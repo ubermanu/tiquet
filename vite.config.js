@@ -5,10 +5,7 @@ import { svelte } from 'vite-plugin-svelte'
  */
 const config = {
   plugins: [svelte()],
-  rollupDedupe: ['svelte'],
-  optimizeDeps: {
-    exclude: ['svelte-routing']
-  }
+  rollupDedupe: ['svelte']
 }
 
 export default config
