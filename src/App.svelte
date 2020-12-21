@@ -1,8 +1,8 @@
 <script>
   import Router from 'svelte-spa-router'
   import routes from './routes'
-  import Navbar from './Navbar.svelte'
-  import ToastRenderer from './ToastRenderer.svelte'
+  import Navbar from './components/Navbar.svelte'
+  import ToastRenderer from './components/ToastRenderer.svelte'
 </script>
 
 <style>
