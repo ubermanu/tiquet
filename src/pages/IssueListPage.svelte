@@ -1,5 +1,5 @@
 <script>
-  import issues from '../stores/issues'
+  import issues, { toggleIssue, deleteIssue } from '../stores/issues'
 </script>
 
 <div class="container">
@@ -10,7 +10,7 @@
         <div class="columns">
           <div class="column">
             <label class="checkbox">
-              <input type="checkbox" class="mr-3" bind:checked={issue.complete} />
+              <input type="checkbox" class="mr-3" bind:checked={issue.complete} on:change={() => toggleIssue(issue)} />
               <span class="is-size-5" class:is-strike={issue.complete}>{issue.title}</span>
             </label>
           </div>
@@ -18,7 +18,7 @@
             <div class="buttons">
               <a href="#/issues/{issue.id}" class="button is-small is-light">Show</a>
               <a href="#/issues/{issue.id}/edit" class="button is-small is-light">Edit</a>
-              <button class="button is-small is-light is-danger">
+              <button class="button is-small is-light is-danger" on:click={() => deleteIssue(issue)}>
                 Delete
               </button>
             </div>

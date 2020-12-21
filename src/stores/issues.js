@@ -23,4 +23,13 @@ export function saveIssue(issue) {
   update(issues => [...issues.filter(({ id }) => id !== issue.id), issue])
 }
 
+export function toggleIssue(issue) {
+  issue.complete = !issue.complete
+  saveIssue(issue)
+}
+
+export function deleteIssue(issue) {
+  update(issues => [...issues.filter(({ id }) => id !== issue.id)])
+}
+
 export default store
