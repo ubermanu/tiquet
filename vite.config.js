@@ -1,11 +1,12 @@
-import { svelte } from 'vite-plugin-svelte'
+const { defineConfig } = require('vite')
+const svelte = require('@sveltejs/vite-plugin-svelte')
 
-/**
- * @type { import('vite').UserConfig }
- */
-const config = {
-  plugins: [svelte()],
-  rollupDedupe: ['svelte']
-}
-
-export default config
+module.exports = defineConfig(({ command, mode }) => {
+  const isProduction = mode === 'production'
+  return {
+    plugins: [svelte()],
+    build: {
+      minify: isProduction
+    }
+  }
+})
