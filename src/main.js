@@ -1,4 +1,4 @@
-import 'carbon-components-svelte/css/g100.css'
+import 'carbon-components-svelte/css/all.css'
 import App from './App.svelte'
 
 const app = new App({
