@@ -5,21 +5,6 @@
   import ToastRenderer from './components/ToastRenderer.svelte'
 </script>
 
-<style>
-    @import "//cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.1/css/all.min.css";
-
-    main {
-        display: flex;
-        flex-direction: column;
-        min-height: 100vh;
-        padding: 1rem;
-    }
-
-    .footer {
-        margin-top: auto;
-    }
-</style>
-
 <main>
   <Navbar />
   <ToastRenderer />
@@ -27,10 +12,22 @@
     <Router {routes} />
   </section>
   <footer class="footer">
-    <div class="content has-text-centered">
-      <p>
-        Powered by <a href="https://github.com/ubermanu/tiquet" target="_blank">Tiquet</a>
-      </p>
-    </div>
+    <span>
+      Powered by
+      <a href="https://github.com/ubermanu/tiquet" target="_blank">Tiquet</a>
+    </span>
   </footer>
 </main>
+
+<style>
+  main {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    padding: 1rem;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+</style>
