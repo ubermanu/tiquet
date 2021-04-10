@@ -1,6 +1,7 @@
 lockfileVersion: 5.3
 
 specifiers:
+  '@carbon/grid': ^10.24.0
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.6
   carbon-components-svelte: ^0.32.1
   clipboard-copy: 3.2.0
@@ -12,6 +13,7 @@ specifiers:
   vite: ^2.1.5
 
 dependencies:
+  '@carbon/grid': 10.24.0
   carbon-components-svelte: 0.32.1
   clipboard-copy: 3.2.0
   query-string: 6.14.1
@@ -25,6 +27,21 @@ devDependencies:
   vite: 2.1.5
 
 packages:
+
+  /@carbon/grid/10.24.0:
+    resolution: {integrity: sha512-ZZFHbQQi9wpwq+0PtvEF+1tq0RoS3vghPRnoxKH/MbvbD9VQg9V8az+FKRIwQVkUtxUxAw+CBcMTP/FiLkXEwg==}
+    dependencies:
+      '@carbon/import-once': 10.6.0
+      '@carbon/layout': 10.22.0
+    dev: false
+
+  /@carbon/import-once/10.6.0:
+    resolution: {integrity: sha512-vi0lnmZot9J5uW2p9chtyLBwe3nCTY4HrDWuglLOZVOHu7dbLQiRjD/r3uOjB4lr5qduRwk2hblBXKBhpVDBpg==}
+    dev: false
+
+  /@carbon/layout/10.22.0:
+    resolution: {integrity: sha512-XJ7FZzNbRtGrgC4WK7G5RF9NvlscHoW3xg0DAZZxxumqcR3t7E9ARF78aNVjsATUA7+dEN54yQ0TM7WRSTTXlg==}
+    dev: false
 
   /@rollup/pluginutils/4.1.0:
     resolution: {integrity: sha512-TrBhfJkFxA+ER+ew2U2/fHbebhLT/l/2pRk0hfj9KusXUuRXd2v0R58AfaZK9VXDQ4TogOSEmICVrQAA3zFnHQ==}
