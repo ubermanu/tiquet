@@ -8,6 +8,7 @@
   "dependencies": {
     "@carbon/grid": "^10.24.0",
     "carbon-components-svelte": "^0.32.1",
+    "carbon-icons-svelte": "^10.28.0",
     "clipboard-copy": "3.2.0",
     "query-string": "^6.14.1",
     "svelte": "^3.37.0",
