@@ -2,7 +2,6 @@ lockfileVersion: 5.3
 
 specifiers:
   '@sveltejs/vite-plugin-svelte': ^1.0.0-next.6
-  bulma: ^0.9.2
   carbon-components-svelte: ^0.32.1
   clipboard-copy: 3.2.0
   prettier: ^2.2.1
@@ -13,7 +12,6 @@ specifiers:
   vite: ^2.1.5
 
 dependencies:
-  bulma: 0.9.2
   carbon-components-svelte: 0.32.1
   clipboard-copy: 3.2.0
   query-string: 6.14.1
@@ -66,10 +64,6 @@ packages:
     dependencies:
       color-convert: 2.0.1
     dev: true
-
-  /bulma/0.9.2:
-    resolution: {integrity: sha512-e14EF+3VSZ488yL/lJH0tR8mFWiEQVCMi/BQUMi2TGMBOk+zrDg4wryuwm/+dRSHJw0gMawp2tsW7X1JYUCE3A==}
-    dev: false
 
   /carbon-components-svelte/0.32.1:
     resolution: {integrity: sha512-48ezWmDQCqdfxQHWV4OaG984v8pLT6qEIHJ6nKbqpUMJ0+FR1Z755HEU1T/AyZebMY4808SF5xH7Ayi8PvAMSA==}
