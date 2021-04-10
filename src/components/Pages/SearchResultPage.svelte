@@ -1,6 +1,6 @@
 <script>
   import queryString from 'query-string'
-  import { findIssuesByKeyword } from '../stores/issues'
+  import { findIssuesByKeyword } from '../../stores/issues'
 
   const query = queryString.parse(location.search)
   const keyword = query.q || ''

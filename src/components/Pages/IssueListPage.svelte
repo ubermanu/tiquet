@@ -1,5 +1,5 @@
 <script>
-  import issues, { toggleIssue, deleteIssue } from '../stores/issues'
+  import issues, { toggleIssue, deleteIssue } from '../../stores/issues'
   import {
     Grid,
     Row,

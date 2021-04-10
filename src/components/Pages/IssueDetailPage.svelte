@@ -1,6 +1,6 @@
 <script>
   import NotFoundPage from './NotFoundPage.svelte'
-  import { findIssueById } from '../stores/issues'
+  import { findIssueById } from '../../stores/issues'
 
   export let params = {}
   const issue = findIssueById(params.id)

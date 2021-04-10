@@ -1,6 +1,6 @@
 <script>
   import NotFoundPage from './NotFoundPage.svelte'
-  import { findIssueById, saveIssue } from '../stores/issues'
+  import { findIssueById, saveIssue } from '../../stores/issues'
   import { writable } from 'svelte/store'
 
   export let params = {}

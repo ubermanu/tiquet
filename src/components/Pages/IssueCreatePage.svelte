@@ -7,7 +7,7 @@
     FormGroup
   } from 'carbon-components-svelte'
   import { writable } from 'svelte/store'
-  import { addIssue } from '../stores/issues'
+  import { addIssue } from '../../stores/issues'
   import Add16 from 'carbon-icons-svelte/lib/Add16'
 
   let issue = writable({
