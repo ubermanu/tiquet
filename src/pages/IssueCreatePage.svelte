@@ -21,7 +21,8 @@
         <div class="field">
           <label class="label" for="issue-title">Title</label>
           <div class="control">
-            <input id="issue-title" name="title" class="input" type="text" bind:value={$issue.title} required />
+            <input id="issue-title" name="title" class="input" type="text" bind:value={$issue.title} required
+                   autocomplete="off" />
           </div>
         </div>
 
