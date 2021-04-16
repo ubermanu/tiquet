@@ -9,8 +9,10 @@
     <div class="navbar-item">
       <span class="is-size-4">🦟</span>
     </div>
-    <a role="button" aria-label="menu" aria-expanded="false"
-       class="navbar-burger burger" class:is-active={opened} on:click={() => opened = !opened}>
+    <a href role="button" aria-label="menu" aria-expanded="false"
+       class="navbar-burger burger"
+       class:is-active={opened}
+       on:click|preventDefault={() => opened = !opened}>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
       <span aria-hidden="true"></span>
