@@ -1,12 +1,12 @@
 <script>
   import { writable } from 'svelte/store'
+  import { push } from 'svelte-spa-router'
 
   let search = writable('')
 
-  // TODO: Fix search params
   function handleSubmit(e) {
     e.preventDefault()
-    history.push(e.target.action + '/' + encodeURIComponent($search))
+    push(e.target.getAttribute('action') + '/' + encodeURIComponent($search))
   }
 </script>
 
