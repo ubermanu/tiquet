@@ -5,12 +5,11 @@
   let search = writable('')
 
   function handleSubmit(e) {
-    e.preventDefault()
     push(e.target.getAttribute('action') + '/' + encodeURIComponent($search))
   }
 </script>
 
-<form action="#/search" on:submit={handleSubmit}>
+<form action="#/search" on:submit|preventDefault={handleSubmit}>
   <div class="field">
     <div class="control has-icons-left has-icons-right">
       <input class="input" type="text" name="q" placeholder="Find an issue..."
