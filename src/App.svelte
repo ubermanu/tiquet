@@ -2,7 +2,7 @@
   import Router from 'svelte-spa-router'
   import routes from './routes'
   import Navbar from './components/Navbar.svelte'
-  import ToastRenderer from './components/ToastRenderer.svelte'
+  import MessageRenderer from './components/MessageRenderer.svelte'
 </script>
 
 <style>
@@ -19,7 +19,7 @@
 
 <main>
   <Navbar />
-  <ToastRenderer />
+  <MessageRenderer />
   <section class="section">
     <Router {routes} />
   </section>

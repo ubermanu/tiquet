@@ -1,6 +1,7 @@
 <script>
   import { writable } from 'svelte/store'
   import { addIssue } from '../stores/issues'
+  import { addSuccessMessage } from '../stores/messages'
 
   let issue = writable({
     title: '',
@@ -9,6 +10,7 @@
 
   function handleSubmit(e) {
     addIssue($issue)
+    addSuccessMessage('Issue has been created')
     e.target.reset()
   }
 </script>
