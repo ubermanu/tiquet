@@ -4,6 +4,7 @@ import NotFoundPage from './pages/NotFoundPage.svelte'
 import IssueDetailPage from './pages/IssueDetailPage.svelte'
 import IssueListPage from './pages/IssueListPage.svelte'
 import SearchResultPage from './pages/SearchResultPage.svelte'
+import ActivityPage from './pages/ActivityPage.svelte'
 
 export default {
   '/issues/new': IssueCreatePage,
@@ -11,6 +12,7 @@ export default {
   '/issues/:id': IssueDetailPage,
   '/issues': IssueListPage,
   '/search/:query': SearchResultPage,
+  '/activity': ActivityPage,
   '/': IssueListPage,
   '*': NotFoundPage
 }
