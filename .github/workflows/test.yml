@@ -8,5 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - uses: pnpm/action-setup@v1.2.1
-      - run: pnpm i
+        with:
+          version: 6.0.1
+          run_install: true
       - run: pnpm test
