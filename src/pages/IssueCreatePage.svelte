@@ -25,6 +25,12 @@
   }
 </script>
 
+<style>
+    .panel .is-right {
+        margin-left: auto;
+    }
+</style>
+
 <div class="container">
   <h1 class="title is-1">New issue</h1>
   <div class="columns">
@@ -65,7 +71,12 @@
       {#if alikeIssues.length}
         <article class="panel">
           {#each alikeIssues as alike}
-            <div class="panel-block">{alike.title}</div>
+            <div class="panel-block">
+              <span>{alike.title}</span>
+              <small class="has-text-grey-light is-right" title="{alike.id}">
+                {alike.id.split('-').shift()}
+              </small>
+            </div>
           {/each}
         </article>
       {/if}
