@@ -30,10 +30,14 @@
       </div>
       <div class="column card-actions">
         <div class="buttons">
-          <a href="#/issues/{issue.id}" class="button is-small is-light">Show</a>
-          <a href="#/issues/{issue.id}/edit" class="button is-small is-light">Edit</a>
-          <button class="button is-small is-light is-danger" on:click={() => deleteIssue(issue)}>
-            Delete
+          <a href="#/issues/{issue.id}" class="button is-small is-light" title="Show">
+            <i class="far fa-eye"></i>
+          </a>
+          <a href="#/issues/{issue.id}/edit" class="button is-small is-light" title="Edit">
+            <i class="fa fa-pen"></i>
+          </a>
+          <button class="button is-small is-light is-danger" on:click={() => deleteIssue(issue)} title="Delete">
+            <i class="far fa-trash-alt"></i>
           </button>
         </div>
       </div>
