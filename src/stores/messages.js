@@ -1,19 +1,20 @@
-import { writable } from 'svelte/store'
-import { v4 as uuid } from 'uuid'
+import repository from './repository'
 
-const store = writable([])
-const { update } = store
+const messages = repository()
+const { store, create, destroy } = messages
 
-export function addMessage(message) {
-  update(s => [...s, { id: uuid(), ...message }])
-}
-
+/**
+ * @param {String} body
+ */
 export function addSuccessMessage(body) {
-  addMessage({ body, level: 'is-success' })
+  create({ body, level: 'is-success' })
 }
 
+/**
+ * @param {{id}} message
+ */
 export function deleteMessage(message) {
-  update(s => [...s.filter(({ id }) => id !== message.id)])
+  destroy(message)
 }
 
 export default store

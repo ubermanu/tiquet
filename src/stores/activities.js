@@ -1,11 +1,13 @@
-import { writable } from 'svelte/store'
-import { v4 as uuid } from 'uuid'
+import repository from './repository'
 
-const store = writable([])
-const { update } = store
+const { store, create } = repository()
 
-export function log(body, icon) {
-  update(s => [...s, { id: uuid(), body, icon }])
+/**
+ * @param {String} body
+ * @param {String} icon
+ */
+export function log(body, icon = null) {
+  create({ body, icon })
 }
 
 export default store
