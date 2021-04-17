@@ -3,7 +3,6 @@
   import { findIssueById, saveIssue } from '../stores/issues'
   import { writable } from 'svelte/store'
   import { push } from 'svelte-spa-router'
-  import { addSuccessMessage } from '../stores/messages'
 
   export let params = {}
   const issue = findIssueById(params.id)
@@ -11,7 +10,6 @@
 
   function handleSubmit() {
     saveIssue($update)
-    addSuccessMessage('The issue has been saved')
     push(`#/issues/${issue.id}`)
   }
 </script>
