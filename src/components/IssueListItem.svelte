@@ -12,6 +12,11 @@
     .is-strike {
         text-decoration: line-through;
     }
+
+    .card-actions {
+        flex-basis: auto;
+        flex-grow: 0;
+    }
 </style>
 
 <div class="card mb-4" class:is-done={issue.complete}>
@@ -23,7 +28,7 @@
           <span class="is-size-5" class:is-strike={issue.complete}>{issue.title}</span>
         </label>
       </div>
-      <div class="column is-one-fifth">
+      <div class="column card-actions">
         <div class="buttons">
           <a href="#/issues/{issue.id}" class="button is-small is-light">Show</a>
           <a href="#/issues/{issue.id}/edit" class="button is-small is-light">Edit</a>
