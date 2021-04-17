@@ -2,6 +2,8 @@
   import NotFoundPage from './NotFoundPage.svelte'
   import { findIssueById, saveIssue } from '../stores/issues'
   import { writable } from 'svelte/store'
+  import { push } from 'svelte-spa-router'
+  import { addSuccessMessage } from '../stores/messages'
 
   export let params = {}
   const issue = findIssueById(params.id)
@@ -9,6 +11,8 @@
 
   function handleSubmit() {
     saveIssue({ ...issue, ...$update })
+    addSuccessMessage('The issue has been saved')
+    push(`#/issues/${issue.id}`)
   }
 </script>
 
@@ -35,7 +39,7 @@
           <button class="button is-link">Save</button>
         </div>
         <div class="control">
-          <a href="#/issue/{issue.id}" class="button is-link is-light">Cancel</a>
+          <a href="#/issues/{issue.id}" class="button is-link is-light">Cancel</a>
         </div>
       </div>
     </form>
