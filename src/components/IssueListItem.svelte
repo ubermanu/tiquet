@@ -4,7 +4,17 @@
   export let issue
 </script>
 
-<div class="card mb-4">
+<style>
+    .is-done {
+        opacity: 0.5;
+    }
+
+    .is-strike {
+        text-decoration: line-through;
+    }
+</style>
+
+<div class="card mb-4" class:is-done={issue.complete}>
   <div class="card-content">
     <div class="columns">
       <div class="column">
