@@ -62,13 +62,13 @@
           Check if the issue does not exist already
         </div>
       </article>
-      {#each alikeIssues as alike}
-        <div class="card mb-4">
-          <div class="card-content">
-            <span class="is-size-6">{alike.title}</span>
-          </div>
-        </div>
-      {/each}
+      {#if alikeIssues.length}
+        <article class="panel">
+          {#each alikeIssues as alike}
+            <div class="panel-block">{alike.title}</div>
+          {/each}
+        </article>
+      {/if}
     </div>
   </div>
 </div>
