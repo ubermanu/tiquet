@@ -1,6 +1,6 @@
 <script>
   import { writable } from 'svelte/store'
-  import { addIssue } from '../stores/issues'
+  import { addIssue, findIssuesByKeyword } from '../stores/issues'
   import { addSuccessMessage } from '../stores/messages'
 
   let issue = writable({
@@ -12,6 +12,16 @@
     addIssue($issue)
     addSuccessMessage('Issue has been created')
     e.target.reset()
+  }
+
+  let alikeIssues = []
+
+  $: {
+    if ($issue.title.length) {
+      alikeIssues = findIssuesByKeyword($issue.title)
+    } else {
+      alikeIssues = []
+    }
   }
 </script>
 
@@ -52,13 +62,13 @@
           Check if the issue does not exist already
         </div>
       </article>
-      <!--{alikeIssues.map(issue => (-->
-      <!--  <div class="card mb-4" key={issue.id}>-->
-      <!--    <div class="card-content">-->
-      <!--      <span class="is-size-6">{issue.title}</span>-->
-      <!--    </div>-->
-      <!--  </div>-->
-      <!--))}-->
+      {#each alikeIssues as alike}
+        <div class="card mb-4">
+          <div class="card-content">
+            <span class="is-size-6">{alike.title}</span>
+          </div>
+        </div>
+      {/each}
     </div>
   </div>
 </div>
