@@ -10,7 +10,7 @@
   let update = writable({ ...issue })
 
   function handleSubmit() {
-    saveIssue({ ...issue, ...$update })
+    saveIssue($update)
     addSuccessMessage('The issue has been saved')
     push(`#/issues/${issue.id}`)
   }
