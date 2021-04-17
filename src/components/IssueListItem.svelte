@@ -9,7 +9,7 @@
     <div class="columns">
       <div class="column">
         <label class="checkbox">
-          <input type="checkbox" class="mr-3" bind:checked={issue.complete} on:change={() => toggleIssue(issue)} />
+          <input type="checkbox" class="mr-3" bind:checked={issue.complete} on:click={() => toggleIssue(issue)} />
           <span class="is-size-5" class:is-strike={issue.complete}>{issue.title}</span>
         </label>
       </div>
