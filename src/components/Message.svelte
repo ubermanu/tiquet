@@ -3,9 +3,10 @@
   import { writable } from 'svelte/store'
   import { deleteMessage } from '../stores/messages'
 
+  export let message
+
   let timeoutHandler = 0
   let animationHandler = 0
-
   let progress = writable(0)
 
   onMount(() => {
@@ -22,8 +23,6 @@
       clearInterval(animationHandler)
     }
   })
-
-  export let message
 </script>
 
 <style>
