@@ -1,13 +1,12 @@
-import _ from 'lodash'
-import repository from './repository'
+import depot from 'svelte-depot'
 import { log } from './activities'
 import { addSuccessMessage } from './messages'
 
-const issues = repository()
-const { store, create, update, destroy } = issues
+const issues = depot()
+const { store } = issues
 
 export function addIssue(issue) {
-  create({ complete: false, ...issue })
+  issues.add({ complete: false, ...issue })
   log('Created a new issue', 'far fa-plus-square')
   addSuccessMessage('Issue has been created')
 }
@@ -20,18 +19,18 @@ export function findIssuesByKeyword(query) {
 }
 
 export function findIssueById(id) {
-  return _.find(issues.toArray(), { id })
+  return issues.find({ id })
 }
 
 export function saveIssue(issue) {
-  update(issue)
+  issues.update(issue)
   log('Issue has been updated', 'far fa-edit')
   addSuccessMessage('Issue has been updated')
 }
 
 export function toggleIssue(issue) {
   issue.complete = !issue.complete
-  update(issue)
+  issues.update(issue)
 
   const msg = 'The issue has been marked as '.concat(issue.complete ? 'done' : 'undone')
   log(msg, 'far fa-check-square')
@@ -39,7 +38,7 @@ export function toggleIssue(issue) {
 }
 
 export function deleteIssue(issue) {
-  destroy(issue)
+  issues.remove(issue)
   log('Issue has been deleted', 'far fa-trash-alt')
   addSuccessMessage('Issue has been deleted')
 }

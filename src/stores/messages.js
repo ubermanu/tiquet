@@ -1,20 +1,20 @@
-import repository from './repository'
+import depot from 'svelte-depot'
 
-const messages = repository()
-const { store, create, destroy } = messages
+const messages = depot()
+const { store } = messages
 
 /**
  * @param {String} body
  */
 export function addSuccessMessage(body) {
-  create({ body, level: 'is-success' })
+  messages.add({ body, level: 'is-success' })
 }
 
 /**
  * @param {{id}} message
  */
 export function deleteMessage(message) {
-  destroy(message)
+  messages.remove(message)
 }
 
 export default store

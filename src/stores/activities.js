@@ -1,13 +1,14 @@
-import repository from './repository'
+import depot from 'svelte-depot'
 
-const { store, create } = repository()
+const activities = depot()
+const { store } = activities
 
 /**
  * @param {String} body
  * @param {String} icon
  */
 export function log(body, icon = null) {
-  create({ body, icon })
+  activities.add({ body, icon })
 }
 
 export default store
