@@ -1,11 +1,11 @@
 <script>
-  import { Icon, Bell, Search, Menu, Cog } from 'svelte-hero-icons';
-  import messages from '$lib/message.js';
+  import { Icon, Bell, Search, Cog } from 'svelte-hero-icons';
+  import messages from '$lib/stores/message.js';
 </script>
 
 <header class="navbar bg-base-100">
   <div class="navbar-start">
-    <a class="btn btn-ghost normal-case text-xl">Tiquet</a>
+    <a class="btn btn-ghost normal-case text-xl" href="/">Tiquet</a>
   </div>
   <div class="navbar-end">
     <button class="btn btn-ghost btn-circle">
