@@ -8,6 +8,7 @@ specifiers:
   '@types/cookie': ^0.5.1
   autoprefixer: ^10.4.13
   daisyui: ^2.51.0
+  pocketbase: ^0.11.1
   postcss: ^8.4.21
   prettier: ^2.8.0
   prettier-plugin-svelte: ^2.8.1
@@ -17,6 +18,9 @@ specifiers:
   tailwindcss: ^3.2.7
   typescript: ^4.9.3
   vite: ^4.0.0
+
+dependencies:
+  pocketbase: 0.11.1
 
 devDependencies:
   '@fontsource/fira-mono': 4.5.10
@@ -931,6 +935,10 @@ packages:
     resolution: {integrity: sha512-udgsAY+fTnvv7kI7aaxbqwWNb0AHiB0qBO89PZKPkoTmGOgdbrHDKD+0B2X4uTfJ/FT1R09r9gTsjUjNJotuog==}
     engines: {node: '>=0.10.0'}
     dev: true
+
+  /pocketbase/0.11.1:
+    resolution: {integrity: sha512-4DeKvS3Yqd8zx4/sHQhalACK5fl2/UfzBTLvCFVrTNBqXpy1epmOaXEiUjHNoZYLFw1IMeksRRaWZR8akARwOQ==}
+    dev: false
 
   /postcss-import/14.1.0_postcss@8.4.21:
     resolution: {integrity: sha512-flwI+Vgm4SElObFVPpTIT7SU7R3qk2L7PyduMcokiaVKuWv9d/U+Gm/QAd8NDLuykTWTkcrjOeD2Pp1rMeBTGw==}
