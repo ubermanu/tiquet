@@ -1,7 +1,15 @@
 <script>
+  import { setContext } from 'svelte';
   import Header from '$components/Header.svelte';
   import Footer from '$components/Footer.svelte';
   import './styles.css';
+
+  /**
+   * @type {import('./$types').PageData}
+   */
+  export let data;
+
+  setContext('authenticatedUser', data.user);
 </script>
 
 <svelte:head>
