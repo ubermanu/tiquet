@@ -1,6 +1,6 @@
 <script>
   import { getContext } from 'svelte';
-  import { Icon, Bell, Search, Cog } from 'svelte-hero-icons';
+  import { Icon, Bell, Search } from 'svelte-hero-icons';
   import messages from '$lib/stores/message.js';
 
   const user = getContext('authenticatedUser');
@@ -23,12 +23,23 @@
           {/if}
         </span>
       </button>
-      <button class="btn btn-ghost btn-circle">
-        <Icon src={Cog} class="h-5 w-5" />
-      </button>
-      <button class="btn btn-ghost btn-circle">
-        <img class="rounded-full w-8" src={`https://i.pravatar.cc/150?u=${user.email}`} alt="" />
-      </button>
+      <div class="dropdown dropdown-end">
+        <label tabindex="0" class="btn btn-ghost btn-circle avatar">
+          <span class="w-10 rounded-full overflow-hidden">
+            <img src={`https://i.pravatar.cc/150?u=${user.email}`} alt />
+          </span>
+        </label>
+        <ul
+          tabindex="0"
+          class="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52"
+        >
+          <li class="text-gray-500 pointer-events-none" tabindex="-1">
+            <span>{user.email}</span>
+          </li>
+          <li><a href="/settings">Settings</a></li>
+          <li><a href="/logout">Logout</a></li>
+        </ul>
+      </div>
     {/if}
   </div>
 </header>
