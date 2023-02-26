@@ -1,8 +1,9 @@
 <script>
-  import { Icon, Pencil } from 'svelte-hero-icons';
+  import { CheckCircle, Icon, Pencil } from 'svelte-hero-icons';
   import { getUserAvatarUrl } from '$lib/pocketbase.js';
 
   export let data;
+  export let form;
 
   function showPreview(event) {
     const { target } = event;
@@ -58,4 +59,12 @@
       </div>
     </fieldset>
   </form>
+  {#if form?.success}
+    <div class="alert alert-success shadow-lg mt-6 w-full">
+      <div>
+        <Icon src={CheckCircle} class="stroke-current flex-shrink-0 w-6 h-6" />
+        <span>Your profile has been updated.</span>
+      </div>
+    </div>
+  {/if}
 </div>
