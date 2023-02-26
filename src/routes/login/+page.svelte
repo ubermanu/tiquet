@@ -12,6 +12,9 @@
           <span class="label-text">Password</span>
         </label>
         <input type="password" name="password" class="input input-bordered w-full" />
+        <div class="label">
+          <a class="label-text-alt text-secondary" href="/reset-password">Forgot Password?</a>
+        </div>
       </div>
       <div class="form-control w-full mt-6">
         <button type="submit" class="btn btn-primary">Login</button>
