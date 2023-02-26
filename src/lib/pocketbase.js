@@ -9,7 +9,6 @@ export function getImageUrl(collectionId, recordId, filename, size = '0x0') {
 }
 
 export function getUserAvatarUrl(user, size = '0x0') {
-  console.log(user.avatar);
   return user.avatar
     ? getImageUrl('users', user.id, user.avatar, size)
     : `https://ui-avatars.com/api/?name=${user.email}&size=${size}`;
