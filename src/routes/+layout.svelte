@@ -17,24 +17,12 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="app">
+<div class="flex flex-col min-h-screen">
   <Header />
 
-  <main>
+  <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
     <slot />
   </main>
 
   <Footer />
 </div>
-
-<style>
-  .app {
-    display: flex;
-    flex-direction: column;
-    min-height: 100vh;
-  }
-
-  main {
-    flex: 1;
-  }
-</style>

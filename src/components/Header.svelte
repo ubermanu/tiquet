@@ -2,6 +2,7 @@
   import { getContext } from 'svelte';
   import { Icon, Bell, Search } from 'svelte-hero-icons';
   import messages from '$lib/stores/message.js';
+  import { getUserAvatarUrl } from '$lib/pocketbase.js';
 
   const user = getContext('authenticatedUser');
 </script>
@@ -26,7 +27,7 @@
       <div class="dropdown dropdown-end">
         <label tabindex="0" class="btn btn-ghost btn-circle avatar">
           <span class="w-10 rounded-full overflow-hidden">
-            <img src={`https://i.pravatar.cc/150?u=${user.email}`} alt />
+            <img src={getUserAvatarUrl(user)} alt />
           </span>
         </label>
         <ul

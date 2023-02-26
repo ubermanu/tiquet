@@ -1,4 +1,5 @@
 import { createPocketBase } from '$lib/pocketbase.js';
+import { redirect } from '@sveltejs/kit';
 
 export async function handle({ event, resolve }) {
   const pb = createPocketBase();
@@ -10,6 +11,12 @@ export async function handle({ event, resolve }) {
     event.locals.user = structuredClone(pb.authStore.model);
   } else {
     event.locals.user = undefined;
+  }
+
+  if (event.url.pathname.startsWith('/settings')) {
+    if (!event.locals.user) {
+      throw redirect(303, '/login');
+    }
   }
 
   const response = await resolve(event);
