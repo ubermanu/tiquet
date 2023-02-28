@@ -1,11 +1,12 @@
 import PocketBase from 'pocketbase';
+import { PUBLIC_POCKETBASE_URL } from '$env/static/public';
 
 export function createPocketBase() {
-  return new PocketBase('http://0.0.0.0:8090');
+  return new PocketBase(PUBLIC_POCKETBASE_URL);
 }
 
 export function getImageUrl(collectionId, recordId, filename, size = '0x0') {
-  return `http://0.0.0.0:8090/api/files/${collectionId}/${recordId}/${filename}?thumb=${size}`;
+  return `${PUBLIC_POCKETBASE_URL}/api/files/${collectionId}/${recordId}/${filename}?thumb=${size}`;
 }
 
 export function getUserAvatarUrl(user, size = '0x0') {
