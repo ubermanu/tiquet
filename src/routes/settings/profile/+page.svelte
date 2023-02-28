@@ -44,7 +44,7 @@
           <img class="rounded-full" src={getUserAvatarUrl(data?.user)} id="avatar-preview" alt />
         </label>
       </div>
-      <Input name="name" label="Name" value={data?.user?.name} />
+      <Input name="name" label="Name" value={data?.user?.name} required={true} />
       <div class="form-control w-full mt-6">
         <button type="submit" class="btn btn-primary">Save</button>
       </div>

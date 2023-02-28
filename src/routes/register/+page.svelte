@@ -5,9 +5,9 @@
 <div class="container mx-auto px-6 my-10">
   <form action="?/register" method="POST" class="max-w-xs mx-auto">
     <fieldset>
-      <Input label="Email" name="email" type="email" />
-      <Input label="Password" name="password" type="password" />
-      <Input label="Confirm Password" name="passwordConfirm" type="password" />
+      <Input label="Email" name="email" type="email" required={true} />
+      <Input label="Password" name="password" type="password" required={true} />
+      <Input label="Confirm Password" name="passwordConfirm" type="password" required={true} />
       <div class="form-control w-full mt-6">
         <button type="submit" class="btn btn-primary">Sign Up</button>
       </div>

@@ -8,7 +8,7 @@
 <div class="container mx-auto px-6 my-10">
   <form action="?/resetPassword" method="POST" class="max-w-xs mx-auto">
     <fieldset>
-      <Input label="Email" name="email" type="email" />
+      <Input label="Email" name="email" type="email" required={true} />
       <div class="form-control w-full mt-6">
         <button type="submit" class="btn btn-primary">Request Password Reset</button>
       </div>

@@ -10,7 +10,7 @@
   export let disabled = false;
 </script>
 
-<div class="form-control w-full">
+<div class="form-control w-full" class:required>
   <label class="label" for={id}>
     <span class="label-text">{label}</span>
   </label>
@@ -31,3 +31,10 @@
     </label>
   {/if}
 </div>
+
+<style>
+  .form-control.required .label-text::after {
+    @apply text-red-500;
+    content: ' *';
+  }
+</style>

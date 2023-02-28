@@ -5,8 +5,8 @@
 <div class="container mx-auto px-6 my-10">
   <form action="?/login" method="POST" class="max-w-xs mx-auto">
     <fieldset>
-      <Input label="Email" name="email" type="email" />
-      <Input label="Password" name="password" type="password">
+      <Input label="Email" name="email" type="email" required={true} />
+      <Input label="Password" name="password" type="password" required={true}>
         <a slot="bottom-left" class="text-secondary" href="/reset-password">Forgot Password?</a>
       </Input>
       <div class="form-control w-full mt-6">
