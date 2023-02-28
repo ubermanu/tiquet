@@ -1,6 +1,7 @@
 <script>
   import { CheckCircle, Icon, Pencil } from 'svelte-hero-icons';
   import { getUserAvatarUrl } from '$lib/pocketbase.js';
+  import Input from '$components/Form/Input.svelte';
 
   export let data;
   export let form;
@@ -43,17 +44,7 @@
           <img class="rounded-full" src={getUserAvatarUrl(data?.user)} id="avatar-preview" alt />
         </label>
       </div>
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">Name</span>
-        </label>
-        <input
-          type="text"
-          name="name"
-          class="input input-bordered w-full"
-          value={data?.user?.name}
-        />
-      </div>
+      <Input name="name" label="Name" value={data?.user?.name} />
       <div class="form-control w-full mt-6">
         <button type="submit" class="btn btn-primary">Save</button>
       </div>

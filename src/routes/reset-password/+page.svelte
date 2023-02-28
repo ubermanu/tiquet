@@ -1,17 +1,14 @@
 <script>
   import { Icon, InformationCircle } from 'svelte-hero-icons';
+  import Input from '$components/Form/Input.svelte';
+
   export let form;
 </script>
 
 <div class="container mx-auto px-6 my-10">
   <form action="?/resetPassword" method="POST" class="max-w-xs mx-auto">
     <fieldset>
-      <div class="form-control w-full">
-        <label class="label">
-          <span class="label-text">Email</span>
-        </label>
-        <input type="email" name="email" class="input input-bordered w-full" required />
-      </div>
+      <Input label="Email" name="email" type="email" />
       <div class="form-control w-full mt-6">
         <button type="submit" class="btn btn-primary">Request Password Reset</button>
       </div>

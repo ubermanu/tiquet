@@ -12,6 +12,7 @@
     "format": "prettier --plugin-search-dir . --write ."
   },
   "dependencies": {
+    "@lukeed/uuid": "^2.0.0",
     "pocketbase": "^0.11.1"
   },
   "devDependencies": {
