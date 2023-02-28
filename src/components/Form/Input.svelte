@@ -16,9 +16,9 @@
   </label>
   <input
     type="text"
-    name="name"
     class="input input-bordered w-full"
     {id}
+    {name}
     {value}
     {placeholder}
     {required}
