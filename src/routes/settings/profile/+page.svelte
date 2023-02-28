@@ -33,14 +33,14 @@
           value=""
           on:change={showPreview}
         />
-        <label
-          class="relative avatar w-32 rounded-full hover:cursor-pointer"
-          for="avatar"
-          tabindex="0"
-        >
-          <button class="absolute bottom-0 right-0 btn btn-sm btn-secondary btn-circle">
+        <label class="relative avatar w-32 rounded-full hover:cursor-pointer" for="avatar">
+          <span
+            class="absolute bottom-0 right-0 btn btn-sm btn-secondary btn-circle"
+            tabindex="0"
+            role="button"
+          >
             <Icon src={Pencil} class="w-4 h-4" />
-          </button>
+          </span>
           <img class="rounded-full" src={getUserAvatarUrl(data?.user)} id="avatar-preview" alt />
         </label>
       </div>
