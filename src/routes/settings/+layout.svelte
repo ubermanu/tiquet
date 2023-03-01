@@ -24,8 +24,8 @@
     <span>Settings</span>
   </h2>
   <div class="divider" />
-  <div class="flex space-x-4">
-    <div class="w-1/4">
+  <div class="flex flex-col h-full space-y-4 sm:flex-row">
+    <div class="sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">
       <ul class="space-y-2 menu">
         {#each navigation as item}
           <li>
