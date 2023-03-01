@@ -13,10 +13,10 @@
   </div>
   <div class="navbar-end">
     {#if user}
-      <button class="btn btn-ghost">
+      <a class="btn btn-ghost" href="/issues/new">
         <Icon src={Plus} class="h-5 w-5" />
         <span class="normal-case ml-2">New issue</span>
-      </button>
+      </a>
       <button class="btn btn-ghost btn-circle">
         <Icon src={Search} class="h-5 w-5" />
       </button>
