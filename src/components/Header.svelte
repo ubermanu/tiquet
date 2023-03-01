@@ -1,6 +1,6 @@
 <script>
   import { getContext } from 'svelte';
-  import { Icon, Bell, Search } from 'svelte-hero-icons';
+  import { Icon, Bell, Search, Plus } from 'svelte-hero-icons';
   import messages from '$lib/stores/message.js';
   import { getUserAvatarUrl } from '$lib/pocketbase.js';
 
@@ -13,6 +13,10 @@
   </div>
   <div class="navbar-end">
     {#if user}
+      <button class="btn btn-ghost">
+        <Icon src={Plus} class="h-5 w-5" />
+        <span class="normal-case ml-2">New issue</span>
+      </button>
       <button class="btn btn-ghost btn-circle">
         <Icon src={Search} class="h-5 w-5" />
       </button>
