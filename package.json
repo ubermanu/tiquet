@@ -13,6 +13,9 @@
   },
   "dependencies": {
     "@lukeed/uuid": "^2.0.0",
+    "@tiptap/core": "2.0.0-beta.220",
+    "@tiptap/pm": "2.0.0-beta.220",
+    "@tiptap/starter-kit": "2.0.0-beta.220",
     "pocketbase": "^0.11.1"
   },
   "devDependencies": {
