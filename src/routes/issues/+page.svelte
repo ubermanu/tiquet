@@ -1,8 +1,8 @@
 <script>
+  import confirm from '$lib/actions/confirm';
   import { Eye, Icon, Pencil, Trash } from 'svelte-hero-icons';
 
   export let data;
-  console.log(data);
 </script>
 
 <div class="w-full h-full">
@@ -19,7 +19,11 @@
             <a class="btn btn-sm" href="/issues/{issue.id}/edit">
               <Icon src={Pencil} class="w-4 h-4" />
             </a>
-            <a class="btn btn-sm" href="/issues/{issue.id}/delete">
+            <a
+              class="btn btn-sm"
+              href="/issues/{issue.id}/delete"
+              use:confirm={'Are you sure you want to delete this issue?'}
+            >
               <Icon src={Trash} class="w-4 h-4" />
             </a>
           </div>
