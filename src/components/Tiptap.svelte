@@ -52,7 +52,12 @@
 {#if editor}
   <div class="w-full flex items-center space-x-2 mb-2">
     {#each controls as control}
-      <button class="btn btn-ghost btn-sm" on:click={control.action} title={control.title}>
+      <button
+        class="btn btn-ghost btn-sm"
+        on:click={control.action}
+        title={control.title}
+        type="button"
+      >
         {#if control.icon}
           <Icon src={control.icon} class="w-4 h-4" />
         {:else}
