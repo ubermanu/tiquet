@@ -1,5 +1,4 @@
 <script>
-  import { setContext } from 'svelte'
   import Sidebar from '$components/Page/Sidebar.svelte'
   import Footer from '$components/Footer.svelte'
   import { AppShell } from '@skeletonlabs/skeleton'
@@ -10,8 +9,6 @@
 
   /** @type {import('./$types').PageData} */
   export let data
-
-  setContext('authenticatedUser', data.user)
 </script>
 
 <svelte:head>
