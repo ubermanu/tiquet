@@ -1,8 +1,8 @@
 <script>
   import { setContext } from 'svelte'
-
-  import Header from '$components/Header.svelte'
+  import Sidebar from '$components/Page/Sidebar.svelte'
   import Footer from '$components/Footer.svelte'
+  import { AppShell } from '@skeletonlabs/skeleton'
 
   import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css'
   import '@skeletonlabs/skeleton/styles/all.css'
@@ -19,12 +19,8 @@
   <meta name="description" content="Svelte demo app" />
 </svelte:head>
 
-<div class="flex flex-col min-h-screen">
-  <Header />
-
-  <main class="flex-grow w-full max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-    <slot />
-  </main>
-
-  <Footer />
-</div>
+<AppShell style="min-height: 100vh">
+  <Sidebar slot="sidebarLeft" />
+  <slot />
+  <Footer slot="pageFooter" />
+</AppShell>

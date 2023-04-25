@@ -1,13 +1,13 @@
 <script>
-  import { onMount, onDestroy } from 'svelte';
-  import { Editor } from '@tiptap/core';
-  import StarterKit from '@tiptap/starter-kit';
-  import { Code, Icon } from 'svelte-hero-icons';
+  import { onMount, onDestroy } from 'svelte'
+  import { Editor } from '@tiptap/core'
+  import StarterKit from '@tiptap/starter-kit'
+  import { Code, Icon } from 'svelte-hero-icons'
 
-  let element;
-  let editor;
+  let element
+  let editor
 
-  export let content = '';
+  export let content = ''
 
   onMount(() => {
     editor = new Editor({
@@ -16,37 +16,37 @@
       content,
       onTransaction: () => {
         // force re-render so `editor.isActive` works as expected
-        editor = editor;
+        editor = editor
       },
       onUpdate: () => {
-        content = editor.getHTML();
-      }
-    });
-  });
+        content = editor.getHTML()
+      },
+    })
+  })
 
   onDestroy(() => {
     if (editor) {
-      editor.destroy();
+      editor.destroy()
     }
-  });
+  })
 
   const controls = [
     {
       title: 'Bold',
       name: 'B',
-      action: () => editor.chain().focus().toggleBold().run()
+      action: () => editor.chain().focus().toggleBold().run(),
     },
     {
       title: 'Italic',
       name: 'I',
-      action: () => editor.chain().focus().toggleItalic().run()
+      action: () => editor.chain().focus().toggleItalic().run(),
     },
     {
       title: 'Strike',
       name: 'S',
-      action: () => editor.chain().focus().toggleStrike().run()
-    }
-  ];
+      action: () => editor.chain().focus().toggleStrike().run(),
+    },
+  ]
 </script>
 
 {#if editor}
@@ -76,7 +76,7 @@
   }
 
   .element :global(.ProseMirror) {
-    @apply textarea textarea-bordered;
-    @apply h-full min-h-16;
+    @apply textarea;
+    @apply h-full;
   }
 </style>
