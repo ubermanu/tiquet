@@ -1,28 +1,35 @@
-import { error, redirect } from '@sveltejs/kit';
+import { fail } from '@sveltejs/kit'
 
 /** @type {import('./$types').Actions} */
 export const actions = {
   /**
    * @param locals
    * @param {Request} request
-   * @returns {*}
+   * @returns {any}
    */
   register: async ({ locals, request }) => {
-    const formData = await request.formData();
-    const { pb } = locals;
+    const formData = await request.formData()
+    const { pb } = locals
 
-    const email = formData.get('email');
-    const password = formData.get('password');
-    const passwordConfirm = formData.get('passwordConfirm');
+    const email = formData.get('email')
+    const password = formData.get('password')
+    const passwordConfirm = formData.get('passwordConfirm')
 
-    try {
-      await pb.collection('users').create({ email, password, passwordConfirm });
-      await pb.collection('users').requestVerification(email);
-    } catch (err) {
-      console.error(err);
-      throw error(500, 'Something went wrong');
+    if (password !== passwordConfirm) {
+      return fail(400, { message: 'Passwords do not match.' })
     }
 
-    throw redirect(303, '/login');
-  }
-};
+    try {
+      await pb.collection('users').create({ email, password, passwordConfirm })
+      await pb.collection('users').requestVerification(email)
+    } catch (err) {
+      console.error(err)
+      return fail(err.status, { message: err.message })
+    }
+
+    return {
+      success: true,
+      message: 'Please check your email for a verification link.',
+    }
+  },
+}
