@@ -28,7 +28,7 @@
       <Checkbox label="Show Password" bind:checked={showPassword} />
       <button type="submit" class="btn variant-filled">Sign Up</button>
       <p>
-        Already have an account? <a href="?/login">Log in</a>
+        Already have an account? <a href="/login">Log in</a>
       </p>
       {#if form?.message}
         <Alert level={form.success ? 'success' : 'error'}>
