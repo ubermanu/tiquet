@@ -6,6 +6,8 @@
 
 <AppShell>
   <Sidebar slot="sidebarLeft" />
-  <slot />
+  <div class="w-full h-full max-w-4xl mx-auto p-8">
+    <slot />
+  </div>
   <Footer slot="pageFooter" />
 </AppShell>

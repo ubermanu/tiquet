@@ -13,7 +13,7 @@
   <AppRailTile tag="a" href="/issues/new" label="New issue" value={1}>
     <Icon src={Plus} class="w-6 h-6" />
   </AppRailTile>
-  <AppRailTile tag="a" href="/search" label="Search" value={2}>
+  <AppRailTile tag="a" href="/issues" label="Search" value={2}>
     <Icon src={Search} class="w-6 h-6" />
   </AppRailTile>
   <AppRailTile tag="a" href="/notifications" label="Notifications" value={3}>
