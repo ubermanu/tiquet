@@ -1,5 +1,5 @@
 <script>
-  import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css'
+  import '$lib/skeleton/theme.postcss'
   import '@skeletonlabs/skeleton/styles/all.css'
   import '../app.postcss'
 
