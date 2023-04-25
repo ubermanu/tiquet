@@ -12,7 +12,7 @@
 <label class="label" class:required>
   <span>{label}</span>
   <textarea
-    class="textarea textarea-bordered textarea-md w-full"
+    class="textarea w-full"
     {id}
     {name}
     {value}
