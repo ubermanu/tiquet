@@ -13,8 +13,8 @@
 <label class="label" class:required>
   <span>{label}</span>
   <input
-    type="text"
     class="input input-bordered w-full"
+    {type}
     {id}
     {name}
     {value}
