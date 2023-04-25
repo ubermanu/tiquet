@@ -3,14 +3,15 @@
   "version": "0.0.1",
   "type": "module",
   "scripts": {
-    "dev": "vite dev",
     "build": "vite build",
-    "preview": "vite preview",
     "check": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json",
     "check:watch": "svelte-kit sync && svelte-check --tsconfig ./jsconfig.json --watch",
+    "dev": "vite dev",
+    "format": "prettier --plugin-search-dir . --write .",
     "lint": "prettier --plugin-search-dir . --check .",
-    "format": "prettier --plugin-search-dir . --write ."
+    "preview": "vite preview"
   },
+  "prettier": "@ubermanu/prettier-config",
   "dependencies": {
     "@lukeed/uuid": "^2.0.0",
     "@tiptap/core": "2.0.0-beta.220",
@@ -21,9 +22,12 @@
   "devDependencies": {
     "@fontsource/fira-mono": "^4.5.10",
     "@neoconfetti/svelte": "^1.0.0",
+    "@skeletonlabs/skeleton": "^1.2.0",
     "@sveltejs/adapter-auto": "^2.0.0",
     "@sveltejs/kit": "^1.5.0",
+    "@tailwindcss/forms": "^0.5.3",
     "@types/cookie": "^0.5.1",
+    "@ubermanu/prettier-config": "^1.7.1",
     "autoprefixer": "^10.4.13",
     "daisyui": "^2.51.0",
     "postcss": "^8.4.21",

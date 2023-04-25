@@ -1,15 +1,17 @@
 <script>
-  import { setContext } from 'svelte';
-  import Header from '$components/Header.svelte';
-  import Footer from '$components/Footer.svelte';
-  import './styles.css';
+  import { setContext } from 'svelte'
 
-  /**
-   * @type {import('./$types').PageData}
-   */
-  export let data;
+  import Header from '$components/Header.svelte'
+  import Footer from '$components/Footer.svelte'
 
-  setContext('authenticatedUser', data.user);
+  import '@skeletonlabs/skeleton/themes/theme-hamlindigo.css'
+  import '@skeletonlabs/skeleton/styles/all.css'
+  import '../app.postcss'
+
+  /** @type {import('./$types').PageData} */
+  export let data
+
+  setContext('authenticatedUser', data.user)
 </script>
 
 <svelte:head>
