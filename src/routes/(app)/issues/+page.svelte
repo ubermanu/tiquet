@@ -1,5 +1,6 @@
 <script>
   import { Paginator, Table, tableMapperValues } from '@skeletonlabs/skeleton'
+  import { readableDate } from '$lib/helpers.js'
 
   export let data
 
@@ -15,8 +16,8 @@
   // Transform dates to human-readable format
   source = source.map((item) => ({
     ...item,
-    created: new Date(item.created).toLocaleString(),
-    updated: new Date(item.updated).toLocaleString(),
+    created: readableDate(item.created),
+    updated: readableDate(item.updated),
   }))
 
   $: paginatedSource = source.slice(
