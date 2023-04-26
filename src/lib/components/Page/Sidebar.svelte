@@ -4,7 +4,7 @@
   import {
     Icon,
     Bell,
-    Search,
+    DocumentDuplicate,
     Plus,
     Logout,
     Cog,
@@ -21,8 +21,8 @@
   <AppRailTile tag="a" href="/issues/new" label="New issue" value={1}>
     <Icon src={Plus} class="w-6 h-6" />
   </AppRailTile>
-  <AppRailTile tag="a" href="/issues" label="Search" value={2}>
-    <Icon src={Search} class="w-6 h-6" />
+  <AppRailTile tag="a" href="/issues" label="Issues" value={2}>
+    <Icon src={DocumentDuplicate} class="w-6 h-6" />
   </AppRailTile>
   <AppRailTile tag="a" href="/users" label="Users" value={3.5}>
     <Icon src={Users} class="w-6 h-6" />

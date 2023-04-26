@@ -17,7 +17,7 @@
   }
 </script>
 
-<h2 class="text-xl font-bold mb-5">Profile</h2>
+<h2 class="mb-5">Profile</h2>
 
 <form
   action="?/updateProfile"

@@ -17,7 +17,7 @@
   ]
 </script>
 
-<h1 class="text-2xl font-medium mb-4">Settings</h1>
+<h1 class="mb-8">Settings</h1>
 
 <div class="flex flex-col h-full space-y-4 sm:flex-row">
   <div class="sm:w-1/4 mb-4 sm:mb-0 sm:mr-4">
@@ -26,8 +26,9 @@
         <li>
           <a
             href={item.href}
-            class="block px-4 py-2 text-sm font-medium btn variant-ghost"
-            class:active={$page.url.pathname === item.href}
+            class="block px-4 py-2 text-sm font-medium btn"
+            class:variant-ghost={$page.url.pathname !== item.href}
+            class:variant-filled={$page.url.pathname === item.href}
           >
             {item.title}
           </a>

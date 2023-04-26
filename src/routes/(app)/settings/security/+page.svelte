@@ -8,7 +8,7 @@
 </script>
 
 <div class="w-full">
-  <h3 class="text-xl font-bold mb-5">Security</h3>
+  <h3 class="mb-5">Security</h3>
 
   <div class="max-w-xs mb-5">
     <fieldset class="fieldset">

@@ -27,7 +27,7 @@
   }
 </script>
 
-<h1 class="text-3xl font-bold mb-4">Issues</h1>
+<h1 class="mb-8">Issues</h1>
 
 <Table source={tableSource} interactive={true} on:selected={handleSelect} />
 
