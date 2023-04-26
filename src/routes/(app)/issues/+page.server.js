@@ -1,17 +1,23 @@
-import { error } from '@sveltejs/kit';
+import { error } from '@sveltejs/kit'
 
-export const load = async ({ locals }) => {
+/** @type {import('./$types').Load} */
+export const load = async ({ locals, url }) => {
   const getIssues = async () => {
-    const { pb } = locals;
+    const { pb } = locals
     try {
-      return structuredClone(await pb.collection('issues').getList(1, 50));
+      const page = url.searchParams.get('offset') || 1
+      const limit = url.searchParams.get('limit') || 10
+      console.log('page', page, 'limit', limit)
+      return structuredClone(
+        await pb.collection('issues').getList(+page, +limit)
+      )
     } catch (err) {
-      console.error(err);
-      throw error(500, 'Failed to get issues');
+      console.error(err)
+      throw error(500, 'Failed to get issues')
     }
-  };
+  }
 
   return {
-    issues: getIssues()
-  };
-};
+    issues: getIssues(),
+  }
+}
