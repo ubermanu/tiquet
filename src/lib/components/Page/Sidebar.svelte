@@ -1,7 +1,15 @@
 <script>
   import { AppRail, AppRailTile } from '@skeletonlabs/skeleton'
   import { page } from '$app/stores'
-  import { Icon, Bell, Search, Plus, Logout, Cog } from 'svelte-hero-icons'
+  import {
+    Icon,
+    Bell,
+    Search,
+    Plus,
+    Logout,
+    Cog,
+    Users,
+  } from 'svelte-hero-icons'
 
   const user = $page.data.user
 </script>
@@ -15,6 +23,9 @@
   </AppRailTile>
   <AppRailTile tag="a" href="/issues" label="Search" value={2}>
     <Icon src={Search} class="w-6 h-6" />
+  </AppRailTile>
+  <AppRailTile tag="a" href="/users" label="Users" value={3.5}>
+    <Icon src={Users} class="w-6 h-6" />
   </AppRailTile>
   <AppRailTile tag="a" href="/notifications" label="Notifications" value={3}>
     <Icon src={Bell} class="w-6 h-6" />
