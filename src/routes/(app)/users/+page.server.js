@@ -1,3 +1,4 @@
+import { pagination } from '$lib/pocketbase.js'
 import { error } from '@sveltejs/kit'
 
 /** @type {import('./$types').Load} */
@@ -5,11 +6,9 @@ export const load = async ({ locals, url }) => {
   const getUsers = async () => {
     const { pb } = locals
     try {
-      const page = url.searchParams.get('offset') || 1
-      const limit = url.searchParams.get('limit') || 10
-      console.log('page', page, 'limit', limit)
+      const { offset, limit } = pagination(url)
       return structuredClone(
-        await pb.collection('users').getList(+page, +limit)
+        await pb.collection('users').getList(offset, limit)
       )
     } catch (err) {
       console.error(err)

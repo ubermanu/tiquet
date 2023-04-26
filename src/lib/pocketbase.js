@@ -55,3 +55,15 @@ export function success(message) {
     message,
   }
 }
+
+/**
+ * Returns the offset and limit from the given URL.
+ *
+ * @param {URL} url
+ * @returns {{ offset: number | number; limit: number | number }}
+ */
+export function pagination(url) {
+  const offset = +url.searchParams.get('offset') || 1
+  const limit = +url.searchParams.get('limit') || 10
+  return { offset, limit }
+}
