@@ -3,7 +3,7 @@
 
   export let data
 
-  const source = data?.issues?.items || []
+  let source = data?.issues?.items || []
 
   let page = {
     offset: 0,
@@ -11,6 +11,13 @@
     size: source.length,
     amounts: [1, 2, 5, 10],
   }
+
+  // Transform dates to human-readable format
+  source = source.map((item) => ({
+    ...item,
+    created: new Date(item.created).toLocaleString(),
+    updated: new Date(item.updated).toLocaleString(),
+  }))
 
   $: paginatedSource = source.slice(
     page.offset * page.limit, // start
