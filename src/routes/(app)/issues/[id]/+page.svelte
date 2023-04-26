@@ -9,14 +9,14 @@
 
 <div>{@html data?.issue?.description}</div>
 
-<div class="btn-group variant-filled mt-6">
-  <a href="/issues/{data?.issue?.id}/edit" class="btn">
+<div class="flex gap-2 mt-6">
+  <a href="/issues/{data?.issue?.id}/edit" class="btn variant-filled btn-sm">
     <Icon src={Pencil} class="mr-2 w-4 h-4" />
     Edit
   </a>
   <a
     href="/issues/{data?.issue?.id}/delete"
-    class="btn"
+    class="btn variant-filled-error btn-sm"
     use:confirm={'Are you sure you want to delete this issue?'}
   >
     <Icon src={Trash} class="mr-2 w-4 h-4" />

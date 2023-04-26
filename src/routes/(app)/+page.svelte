@@ -1,5 +1,5 @@
 <script>
-  import { Icon, Eye, Pencil } from 'svelte-hero-icons'
+  import { Icon, Eye } from 'svelte-hero-icons'
 
   /** @type {import('./$types').PageData} */
   export let data
@@ -19,18 +19,11 @@
         </div>
         <div class="flex gap-2">
           <a
-            class="btn variant-ghost btn-sm"
+            class="btn variant-filled btn-sm"
             href="/issues/{issue.id}"
             title="View"
           >
             <Icon src={Eye} class="w-4 h-4" />
-          </a>
-          <a
-            class="btn variant-ghost btn-sm"
-            href="/issues/{issue.id}/edit"
-            title="Edit"
-          >
-            <Icon src={Pencil} class="w-4 h-4" />
           </a>
         </div>
       </li>

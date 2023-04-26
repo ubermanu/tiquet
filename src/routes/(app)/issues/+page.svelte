@@ -1,34 +1,39 @@
 <script>
-  import confirm from '$lib/actions/confirm';
-  import { Eye, Icon, Pencil, Trash } from 'svelte-hero-icons';
+  import { Paginator, Table, tableMapperValues } from '@skeletonlabs/skeleton'
 
-  export let data;
+  export let data
+
+  const source = data?.issues?.items || []
+
+  let page = {
+    offset: 0,
+    limit: 5,
+    size: source.length,
+    amounts: [1, 2, 5, 10],
+  }
+
+  $: paginatedSource = source.slice(
+    page.offset * page.limit, // start
+    page.offset * page.limit + page.limit // end
+  )
+
+  /** @type {import('@skeletonlabs/skeleton').TableSource} */
+  $: tableSource = {
+    head: ['Title', 'Created At', 'Updated At'],
+    body: tableMapperValues(paginatedSource, ['title', 'created', 'updated']),
+    meta: tableMapperValues(paginatedSource, ['id']),
+  }
+
+  function handleSelect(event) {
+    const [id] = event.detail
+    window.location.href = `/issues/${id}`
+  }
+
+  console.log(data)
 </script>
 
-<div class="w-full h-full">
-  <h2 class="text-3xl font-bold mb-4">Issues</h2>
-  {#if data?.issues}
-    <ul class="list-reset flex flex-col space-y-4">
-      {#each data?.issues.items as issue}
-        <li class="border-gray-500 border-2 p-4 rounded-lg flex items-center">
-          <a class="flex-grow" href="/issues/{issue.id}">{issue.title}</a>
-          <div class="btn-group">
-            <a class="btn btn-sm" href="/issues/{issue.id}">
-              <Icon src={Eye} class="w-4 h-4" />
-            </a>
-            <a class="btn btn-sm" href="/issues/{issue.id}/edit">
-              <Icon src={Pencil} class="w-4 h-4" />
-            </a>
-            <a
-              class="btn btn-sm"
-              href="/issues/{issue.id}/delete"
-              use:confirm={'Are you sure you want to delete this issue?'}
-            >
-              <Icon src={Trash} class="w-4 h-4" />
-            </a>
-          </div>
-        </li>
-      {/each}
-    </ul>
-  {/if}
-</div>
+<h1 class="text-3xl font-bold mb-4">Issues</h1>
+
+<Table source={tableSource} interactive={true} on:selected={handleSelect} />
+
+<Paginator bind:settings={page} />
