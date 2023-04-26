@@ -5,7 +5,6 @@
     Icon,
     Bell,
     DocumentDuplicate,
-    Plus,
     Logout,
     Cog,
     Users,
@@ -17,9 +16,6 @@
 <AppRail>
   <AppRailTile tag="a" href="/" label="Ticket">
     <span>🦟</span>
-  </AppRailTile>
-  <AppRailTile tag="a" href="/issues/new" label="New issue" value={1}>
-    <Icon src={Plus} class="w-6 h-6" />
   </AppRailTile>
   <AppRailTile tag="a" href="/issues" label="Issues" value={2}>
     <Icon src={DocumentDuplicate} class="w-6 h-6" />

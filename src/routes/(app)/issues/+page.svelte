@@ -2,6 +2,7 @@
   import { Table, tableMapperValues } from '@skeletonlabs/skeleton'
   import { readableDate } from '$lib/helpers.js'
   import Pages from '$lib/components/Pages.svelte'
+  import { Icon, Plus } from 'svelte-hero-icons'
 
   export let data
 
@@ -27,7 +28,13 @@
   }
 </script>
 
-<h1 class="mb-8">Issues</h1>
+<div class="mb-8 flex flex-wrap items-center">
+  <h1 class="flex-grow">Issues</h1>
+  <a href="/issues/new" class="ml-4 btn variant-filled-primary">
+    <Icon src={Plus} class="w-4 h-4 mr-2" />
+    New Issue
+  </a>
+</div>
 
 <Table source={tableSource} interactive={true} on:selected={handleSelect} />
 
