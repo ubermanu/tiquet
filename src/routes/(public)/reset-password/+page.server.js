@@ -3,22 +3,24 @@ export const actions = {
   /**
    * @param locals
    * @param {Request} request
-   * @returns {*}
+   * @returns {any}
    */
   resetPassword: async ({ locals, request }) => {
-    const { pb } = locals;
+    const { pb } = locals
 
-    const formData = await request.formData();
-    const email = formData.get('email');
+    const formData = await request.formData()
+    const email = formData.get('email')
 
     try {
-      await pb.collection('users').requestPasswordReset(email);
+      await pb.collection('users').requestPasswordReset(email)
     } catch (err) {
-      console.error(err);
+      console.error(err)
     }
 
     return {
-      success: true
-    };
-  }
-};
+      success: true,
+      message:
+        'A password reset link has been sent to your email address if it exists in our system.',
+    }
+  },
+}

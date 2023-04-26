@@ -1,8 +1,8 @@
 <script>
   import { Icon, Pencil } from 'svelte-hero-icons'
   import { getUserAvatarUrl } from '$lib/pocketbase.js'
-  import Input from '$components/Form/Input.svelte'
-  import Alert from '$components/Alert.svelte'
+  import Input from '$lib/components/Form/Input.svelte'
+  import Alert from '$lib/components/Alert.svelte'
 
   export let data
   export let form

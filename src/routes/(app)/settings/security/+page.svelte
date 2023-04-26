@@ -1,11 +1,8 @@
 <script>
-  import { CheckCircle, Icon } from 'svelte-hero-icons'
-  import Input from '$components/Form/Input.svelte'
-  import Modal from '$components/Modal.svelte'
-  import Alert from '../../../../components/Alert.svelte'
+  import Input from '$lib/components/Form/Input.svelte'
+  import Modal from '$lib/components/Modal.svelte'
 
   export let data
-  export let form
 
   let updateEmailOpen = false
 </script>
@@ -53,10 +50,4 @@
       </button>
     </fieldset>
   </form>
-
-  {#if form?.message}
-    <div class="mt-4">
-      <Alert level={form?.success ? 'success' : 'error'}>{form.message}</Alert>
-    </div>
-  {/if}
 </div>

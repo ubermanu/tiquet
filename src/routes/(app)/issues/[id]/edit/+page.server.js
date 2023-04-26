@@ -1,8 +1,7 @@
-import { fail } from '$lib/pocketbase.js'
+import { fail } from '@sveltejs/kit'
 
-/** @type {import('./$types').Actions} */
 export const actions = {
-  create: async function ({ request, locals }) {
+  update: async function ({ request, locals, params }) {
     const { pb, user } = locals
     const formData = await request.formData()
 
@@ -13,15 +12,15 @@ export const actions = {
     }
 
     try {
-      await pb.collection('issues').create(issue)
+      await pb.collection('issues').update(params.id, issue)
     } catch (err) {
       console.error(err)
-      return fail(err)
+      return fail(err.status, { message: err.message })
     }
 
     return {
       success: true,
-      message: 'Issue created successfully',
+      message: 'Issue updated',
     }
   },
 }

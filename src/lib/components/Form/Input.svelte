@@ -21,6 +21,7 @@
     {placeholder}
     {required}
     {disabled}
+    {...$$restProps}
   />
 </label>
 

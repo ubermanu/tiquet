@@ -47,13 +47,15 @@
       action: () => editor.chain().focus().toggleStrike().run(),
     },
   ]
+
+  export { element, editor }
 </script>
 
 {#if editor}
   <div class="w-full flex items-center space-x-2 mb-2">
     {#each controls as control}
       <button
-        class="btn btn-ghost btn-sm"
+        class="btn variant-ghost btn-sm active"
         on:click={control.action}
         title={control.title}
         type="button"
@@ -68,15 +70,15 @@
   </div>
 {/if}
 
-<div class="element" bind:this={element} />
+<div class="element" bind:this={element} {...$$restProps} />
 
 <style>
   button.active {
-    @apply text-accent;
+    /*@apply text-accent;*/
   }
 
   .element :global(.ProseMirror) {
-    @apply textarea;
-    @apply h-full;
+    @apply textarea p-2;
+    @apply h-full h-48;
   }
 </style>
