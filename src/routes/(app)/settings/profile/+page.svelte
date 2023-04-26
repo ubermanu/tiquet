@@ -2,10 +2,8 @@
   import { Icon, Pencil } from 'svelte-hero-icons'
   import { getUserAvatarUrl } from '$lib/pocketbase.js'
   import Input from '$lib/components/Form/Input.svelte'
-  import Alert from '$lib/components/Alert.svelte'
 
   export let data
-  export let form
 
   function showPreview(event) {
     const { target } = event
@@ -59,8 +57,5 @@
     </div>
     <Input name="name" label="Name" value={data?.user?.name} required={true} />
     <button type="submit" class="btn variant-filled">Save</button>
-    {#if form?.success}
-      <Alert level="success">Your profile has been updated.</Alert>
-    {/if}
   </fieldset>
 </form>

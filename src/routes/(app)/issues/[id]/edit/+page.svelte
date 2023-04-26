@@ -1,20 +1,18 @@
 <script>
   import Input from '$lib/components/Form/Input.svelte'
-  import Alert from '$lib/components/Alert.svelte'
   import Wysiwyg from '$lib/components/Form/Wysiwyg.svelte'
 
-  export let form
   export let data
 </script>
 
+<h1 class="mb-8">Edit: "{data?.issue?.title}"</h1>
+
+<div class="mb-8">
+  <a href="/issues">&larr; Back to issues</a>
+</div>
+
 <form action="?/update" method="POST">
   <fieldset class="fieldset">
-    <legend class="legend">Edit: "{data?.issue?.title}"</legend>
-    {#if form?.message}
-      <Alert level={form?.success ? 'success' : 'error'}>
-        {form?.message}
-      </Alert>
-    {/if}
     <Input
       label="Title"
       name="title"
