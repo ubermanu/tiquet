@@ -1,4 +1,5 @@
 <script>
+  import { writable } from 'svelte/store'
   import { AppRail, AppRailTile } from '@skeletonlabs/skeleton'
   import { page } from '$app/stores'
   import {
@@ -11,27 +12,29 @@
   } from 'svelte-hero-icons'
 
   const user = $page.data.user
+
+  const links = [
+    { href: '/', label: 'Ticket', icon: '🦟' },
+    { href: '/issues', label: 'Issues', icon: DocumentDuplicate },
+    { href: '/users', label: 'Users', icon: Users },
+    { href: '/notifications', label: 'Notifications', icon: Bell },
+    { href: '/settings', label: 'Settings', icon: Cog },
+    { href: '/logout', label: 'Logout', icon: Logout },
+  ]
+
+  const selected = writable(
+    links.findIndex((link) => link.href === $page.url.pathname)
+  )
 </script>
 
-<AppRail>
-  <AppRailTile tag="a" href="/" label="Ticket">
-    <span>🦟</span>
-  </AppRailTile>
-  <AppRailTile tag="a" href="/issues" label="Issues" value={2}>
-    <Icon src={DocumentDuplicate} class="w-6 h-6" />
-  </AppRailTile>
-  <AppRailTile tag="a" href="/users" label="Users" value={3.5}>
-    <Icon src={Users} class="w-6 h-6" />
-  </AppRailTile>
-  <AppRailTile tag="a" href="/notifications" label="Notifications" value={3}>
-    <Icon src={Bell} class="w-6 h-6" />
-  </AppRailTile>
-  {#if user}
-    <AppRailTile tag="a" href="/settings" label="Settings" value={4}>
-      <Icon src={Cog} class="w-6 h-6" />
+<AppRail {selected}>
+  {#each links as link, i}
+    <AppRailTile tag="a" href={link.href} label={link.label} value={i}>
+      {#if typeof link.icon === 'string'}
+        <span class="w-6 h-6">{link.icon}</span>
+      {:else}
+        <Icon src={link.icon} class="w-6 h-6" />
+      {/if}
     </AppRailTile>
-    <AppRailTile tag="a" href="/logout" label="Logout" value={5}>
-      <Icon src={Logout} class="w-6 h-6" />
-    </AppRailTile>
-  {/if}
+  {/each}
 </AppRail>
