@@ -1,32 +1,25 @@
 <script>
-  import { Icon, Eye } from 'svelte-hero-icons'
+  import { Eye, Icon } from 'svelte-hero-icons'
+  import CollectionTable from '$lib/components/CollectionTable.svelte'
 
-  /** @type {import('./$types').PageData} */
   export let data
 </script>
 
-<h1 class="text-3xl mb-4">Issues</h1>
-<p class="mb-4">
+<h1 class="mb-8">Issues</h1>
+<p class="mb-8">
   The following issues are currently open. Click on an issue to view it in
   detail.
 </p>
-{#if data?.issues}
-  <ul class="list-reset flex flex-col space-y-4">
-    {#each data?.issues.items as issue}
-      <li class="border-2 p-4 rounded-lg flex items-center">
-        <div class="flex-grow">
-          <p>{issue.title}</p>
-        </div>
-        <div class="flex gap-2">
-          <a
-            class="btn variant-filled btn-sm"
-            href="/issues/{issue.id}"
-            title="View"
-          >
-            <Icon src={Eye} class="w-4 h-4" />
-          </a>
-        </div>
-      </li>
-    {/each}
-  </ul>
-{/if}
+
+<CollectionTable
+  searchResults={data?.issues}
+  head={['Title', 'Created At', ' Updated At']}
+  body={['title', 'created', 'updated']}
+  pagination={false}
+>
+  <svelte:fragment slot="actions" let:id>
+    <a class="btn variant-ghost btn-xs" href={`/issues/${id}`} title="View">
+      <Icon src={Eye} class="w-4 h-4 mr-1" />
+    </a>
+  </svelte:fragment>
+</CollectionTable>
