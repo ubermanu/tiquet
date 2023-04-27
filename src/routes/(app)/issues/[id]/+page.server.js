@@ -10,7 +10,7 @@ export const load = async ({ params, locals, url }) => {
         await pb.collection('comments').getList(offset, limit, {
           // filter: `issue == "${params.id}"`,
           expand: 'user',
-          sort: '-created',
+          sort: '+created',
         })
       )
     } catch (err) {

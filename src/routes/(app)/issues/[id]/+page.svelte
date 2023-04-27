@@ -2,10 +2,8 @@
   import confirm from '$lib/actions/confirm'
   import { Icon, Pencil, Trash } from 'svelte-hero-icons'
   import { ProgressRadial } from '@skeletonlabs/skeleton'
-  import Input from '$lib/components/Form/Input.svelte'
   import Wysiwyg from '$lib/components/Form/Wysiwyg.svelte'
   import Alert from '$lib/components/Alert.svelte'
-  import { readableDate } from '$lib/helpers.js'
   import Comment from '$lib/components/Comment.svelte'
 
   export let data
