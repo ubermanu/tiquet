@@ -8,14 +8,14 @@ export const load = async ({ params, locals, url }) => {
       const { offset, limit } = pagination(url, 5)
       return structuredClone(
         await pb.collection('comments').getList(offset, limit, {
-          // filter: `issue == "${params.id}"`,
+          filter: `issue = "${params.id}"`,
           expand: 'user',
           sort: '+created',
         })
       )
     } catch (err) {
       console.error(err)
-      throw error(500, "Failed to get this issue's comments")
+      return error(err.status, "Failed to get this issue's comments")
     }
   }
 

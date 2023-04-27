@@ -7,7 +7,7 @@ export const load = async ({ params, locals }) => {
     try {
       return structuredClone(
         await pb.collection('issues').getList(1, 10, {
-          filter: '',
+          filter: `user = "${params.id}"`,
           sort: '+updated',
         })
       )
@@ -22,7 +22,7 @@ export const load = async ({ params, locals }) => {
     try {
       return structuredClone(
         await pb.collection('comments').getList(1, 10, {
-          filter: '',
+          filter: `user = "${params.id}"`,
           sort: '+updated',
           expand: 'issue',
         })

@@ -11,17 +11,17 @@
 </script>
 
 <div class="flex flex-wrap items-center mb-8 gap-4">
-  <h1 class="flex-grow">{data?.issue?.title}</h1>
+  <h1 class="flex-grow">{data.issue.title}</h1>
   <div class="flex gap-2">
     <a
-      href="/issues/{data?.issue?.id}/edit"
+      href="/issues/{data.issue.id}/edit"
       class="btn variant-filled btn-sm xl:btn-md"
     >
       <Icon src={Pencil} class="mr-2 w-4 h-4" />
       Edit
     </a>
     <a
-      href="/issues/{data?.issue?.id}/delete"
+      href="/issues/{data.issue.id}/delete"
       class="btn variant-filled-error btn-sm xl:btn-md"
       use:confirm={'Are you sure you want to delete this issue?'}
     >
@@ -31,13 +31,13 @@
   </div>
 </div>
 
-<div>{@html data?.issue?.description}</div>
+<div>{@html data.issue.description}</div>
 
 <hr class="my-8" />
 
 <h2 class="unstyled text-xl mb-4" id="comments">Comments</h2>
 
-{#await data?.streamed.comments}
+{#await data.streamed.comments}
   <div class="flex flex-col gap-4 items-center">
     <ProgressRadial value={undefined} width="w-8" />
     <p class="text-gray-500">Loading comments...</p>
