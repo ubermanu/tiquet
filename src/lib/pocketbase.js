@@ -60,10 +60,11 @@ export function success(message) {
  * Returns the offset and limit from the given URL.
  *
  * @param {URL} url
+ * @param {number} defaultLimit
  * @returns {{ offset: number | number; limit: number | number }}
  */
-export function pagination(url) {
+export function pagination(url, defaultLimit = 10) {
   const offset = +url.searchParams.get('offset') || 1
-  const limit = +url.searchParams.get('limit') || 10
+  const limit = +url.searchParams.get('limit') || defaultLimit || 10
   return { offset, limit }
 }

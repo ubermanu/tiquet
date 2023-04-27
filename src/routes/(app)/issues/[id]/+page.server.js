@@ -5,7 +5,7 @@ export const load = async ({ params, locals, url }) => {
   const getComments = async () => {
     const { pb } = locals
     try {
-      const { offset, limit } = pagination(url)
+      const { offset, limit } = pagination(url, 5)
       return structuredClone(
         await pb.collection('comments').getList(offset, limit, {
           // filter: `issue == "${params.id}"`,

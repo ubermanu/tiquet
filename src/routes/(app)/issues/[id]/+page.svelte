@@ -5,6 +5,7 @@
   import Wysiwyg from '$lib/components/Form/Wysiwyg.svelte'
   import Alert from '$lib/components/Alert.svelte'
   import Comment from '$lib/components/Comment.svelte'
+  import Pages from '$lib/components/Pages.svelte'
 
   export let data
 </script>
@@ -48,6 +49,13 @@
         <Comment {comment} />
       {/each}
     </div>
+    <br />
+    <Pages
+      amountText="comments"
+      totalItems={commentList.totalItems}
+      pageSize={commentList.perPage}
+      currentPage={commentList.page}
+    />
   {/if}
 
   <form action="?/postComment" method="POST" class="form mt-8">
