@@ -79,6 +79,6 @@
 
   .element :global(.ProseMirror) {
     @apply textarea p-2;
-    @apply h-full h-48;
+    min-height: 20rem;
   }
 </style>

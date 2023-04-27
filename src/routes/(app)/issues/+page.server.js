@@ -8,7 +8,9 @@ export const load = async ({ locals, url }) => {
     try {
       const { offset, limit } = pagination(url)
       return structuredClone(
-        await pb.collection('issues').getList(offset, limit)
+        await pb.collection('issues').getList(offset, limit, {
+          sort: '-created',
+        })
       )
     } catch (err) {
       console.error(err)

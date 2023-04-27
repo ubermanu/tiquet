@@ -6,7 +6,11 @@ export const load = async ({ locals }) => {
     const { pb } = locals
     try {
       // TODO: Get the latest issues from pb
-      return structuredClone(await pb.collection('issues').getList(1, 10))
+      return structuredClone(
+        await pb.collection('issues').getList(1, 10, {
+          sort: '-updated',
+        })
+      )
     } catch (err) {
       console.error(err)
       throw error(500, 'Failed to get issues')
