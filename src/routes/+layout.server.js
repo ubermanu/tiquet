@@ -1,5 +1,5 @@
 export const load = async ({ locals }) => {
   return {
-    user: locals.user ?? undefined
-  };
-};
+    user: locals.user ?? undefined,
+  }
+}
