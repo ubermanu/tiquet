@@ -13,6 +13,6 @@ export const load = async ({ params, locals }) => {
   }
 
   return {
-    issue: getUser(),
+    user: getUser(),
   }
 }
