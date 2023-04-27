@@ -1,6 +1,7 @@
 import { createPocketBase } from '$lib/pocketbase.js'
 import { redirect } from '@sveltejs/kit'
 
+/** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
   const pb = createPocketBase()
   event.locals.pb = pb

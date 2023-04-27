@@ -1,6 +1,7 @@
 import { pagination } from '$lib/pocketbase.js'
 import { error, fail } from '@sveltejs/kit'
 
+/** @type {import('@sveltejs/kit').Load} */
 export const load = async ({ params, locals, url }) => {
   const getComments = async () => {
     const { pb } = locals
@@ -26,8 +27,9 @@ export const load = async ({ params, locals, url }) => {
   }
 }
 
+/** @type {import('@sveltejs/kit').Actions} */
 export const actions = {
-  postComment: async function ({ request, locals, params }) {
+  postComment: async ({ request, locals, params }) => {
     const { pb, user } = locals
     const formData = await request.formData()
 
@@ -50,11 +52,11 @@ export const actions = {
     }
   },
 
-  deleteComment: async function ({ locals, params }) {
+  deleteComment: async ({ locals, params }) => {
     const { pb } = locals
   },
 
-  updateComment: async function ({ locals, params }) {
+  updateComment: async ({ locals, params }) => {
     const { pb } = locals
   },
 }

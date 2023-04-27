@@ -65,5 +65,5 @@
     </fieldset>
   </form>
 {:catch err}
-  <Alert level="error">{err.message}</Alert>
+  <Alert level="warning">{err.message}</Alert>
 {/await}
