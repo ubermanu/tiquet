@@ -1,6 +1,14 @@
 import { createPocketBase } from '$lib/pocketbase.js'
 import { redirect } from '@sveltejs/kit'
 
+const protectedRoutes = [
+  /^\/$/,
+  /^\/settings/,
+  /^\/notifications/,
+  /^\/users/,
+  /^\/issues/,
+]
+
 /** @type {import('@sveltejs/kit').Handle} */
 export async function handle({ event, resolve }) {
   const pb = createPocketBase()
@@ -15,9 +23,8 @@ export async function handle({ event, resolve }) {
   }
 
   if (
-    event.url.pathname === '/' ||
-    event.url.pathname.startsWith('/settings') ||
-    event.url.pathname.startsWith('/issues')
+    protectedRoutes.some((route) => route.test(event.url.pathname)) &&
+    !event.url.pathname.startsWith('/login')
   ) {
     if (!event.locals.user) {
       throw redirect(303, '/login')
