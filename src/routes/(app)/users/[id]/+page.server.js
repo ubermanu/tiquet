@@ -1,42 +1,32 @@
-import { error } from '@sveltejs/kit'
+import { streamed } from '$lib/helpers.js'
 
-/** @type {import('./$types').Load} */
+/** @type {import('@sveltejs/kit').Load} */
 export const load = async ({ params, locals }) => {
+  const { pb } = locals
+
   const getIssues = async () => {
-    const { pb } = locals
-    try {
-      return structuredClone(
-        await pb.collection('issues').getList(1, 10, {
-          filter: `user = "${params.id}"`,
-          sort: '+updated',
-        })
-      )
-    } catch (err) {
-      console.error(err)
-      throw error(500, "Could not get the user's issues")
-    }
+    return structuredClone(
+      await pb.collection('issues').getList(1, 10, {
+        filter: `user = "${params.id}"`,
+        sort: '+updated',
+      })
+    )
   }
 
   const getComments = async () => {
-    const { pb } = locals
-    try {
-      return structuredClone(
-        await pb.collection('comments').getList(1, 10, {
-          filter: `user = "${params.id}"`,
-          sort: '+updated',
-          expand: 'issue',
-        })
-      )
-    } catch (err) {
-      console.error(err)
-      throw error(500, "Could not get the user's comments")
-    }
+    return structuredClone(
+      await pb.collection('comments').getList(1, 10, {
+        filter: `user = "${params.id}"`,
+        sort: '+updated',
+        expand: 'issue',
+      })
+    )
   }
 
   return {
     streamed: {
-      issues: getIssues(),
-      comments: getComments(),
+      issues: streamed(getIssues),
+      comments: streamed(getComments),
     },
   }
 }

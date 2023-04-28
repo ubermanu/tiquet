@@ -1,28 +1,25 @@
+import { streamed } from '$lib/helpers.js'
 import { pagination } from '$lib/pocketbase.js'
-import { error, fail } from '@sveltejs/kit'
+import { fail } from '@sveltejs/kit'
 
 /** @type {import('@sveltejs/kit').Load} */
 export const load = async ({ params, locals, url }) => {
+  const { pb } = locals
+  const { offset, limit } = pagination(url, 5)
+
   const getComments = async () => {
-    const { pb } = locals
-    try {
-      const { offset, limit } = pagination(url, 5)
-      return structuredClone(
-        await pb.collection('comments').getList(offset, limit, {
-          filter: `issue = "${params.id}"`,
-          expand: 'user',
-          sort: '+created',
-        })
-      )
-    } catch (err) {
-      console.error(err)
-      return error(err.status, "Failed to get this issue's comments")
-    }
+    return structuredClone(
+      await pb.collection('comments').getList(offset, limit, {
+        filter: `issue = "${params.id}"`,
+        expand: 'user',
+        sort: '+created',
+      })
+    )
   }
 
   return {
     streamed: {
-      comments: getComments(),
+      comments: streamed(getComments),
     },
   }
 }

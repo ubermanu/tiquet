@@ -1,9 +1,10 @@
 import { error } from '@sveltejs/kit'
 
-/** @type {import('./$types').Load} */
+/** @type {import('@sveltejs/kit').Load} */
 export const load = async ({ params, locals }) => {
+  const { pb } = locals
+
   const getUser = async () => {
-    const { pb } = locals
     try {
       return structuredClone(await pb.collection('users').getOne(params.id))
     } catch (err) {
