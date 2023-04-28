@@ -6,11 +6,12 @@ import { fail } from '@sveltejs/kit'
 export const load = async ({ params, locals, url }) => {
   const { pb } = locals
   const { offset, limit } = pagination(url, 5)
+  const issueId = params.id
 
   const getComments = async () => {
     return structuredClone(
       await pb.collection('comments').getList(offset, limit, {
-        filter: `issue = "${params.id}"`,
+        filter: `issue = "${issueId}"`,
         expand: 'user',
         sort: '+created',
       })
